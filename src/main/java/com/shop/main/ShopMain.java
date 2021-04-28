@@ -2,16 +2,20 @@ package com.shop.main;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
 import com.shop.dao.ItemDAO;
+import com.shop.dao.ItemOfferDAO;
 import com.shop.dao.UserDAO;
 import com.shop.dao.impl.ItemDAOImpl;
+import com.shop.dao.impl.ItemOfferDAOImpl;
 import com.shop.dao.impl.UserDAOImpl;
 import com.shop.exception.BusinessException;
 import com.shop.model.Item;
+import com.shop.model.ItemOffer;
 import com.shop.model.User;
 import com.shop.util.DataValidations;
 
@@ -127,6 +131,10 @@ public class ShopMain {
 			case 1:
 				addItem();
 				break;
+			case 2:
+				log.info("2)Accept or reject a pending offer");
+				acceptOrRejectOffer();
+				break;
 			case 0:
 				log.info("....0)Back to Main Menu");
 
@@ -137,6 +145,56 @@ public class ShopMain {
 
 		} while (ch != 0);
 
+	}
+
+	private static void acceptOrRejectOffer() {
+		boolean available = printAvailableOffers();
+		if (!available) {
+			return;
+		}
+		int offerId = getInputInt("Offer Id");
+		String input = getInputString("Accept OR Reject");
+		boolean isAccepted = false;
+		if ("Accept".equalsIgnoreCase(input)) {
+			isAccepted = true;
+		} else if ("Rejet".equalsIgnoreCase(input)) {
+			isAccepted = false;
+		} else {
+			System.out.println("----Invalid input: " + input);
+			return;
+		}
+
+		ItemOfferDAO itemOfferDAO = new ItemOfferDAOImpl();
+		try {
+			itemOfferDAO.acceptOrReject(offerId, isAccepted);
+
+			System.out.println("----Item Offer updated: isAccepted " + isAccepted);
+		} catch (BusinessException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	private static boolean printAvailableOffers() {
+		ItemOfferDAO itemOfferDAO = new ItemOfferDAOImpl();
+		try {
+			List<ItemOffer> list = itemOfferDAO.getAvailableItemOffers();
+			if (list == null || list.isEmpty()) {
+				System.out.println("----NO ItemOffers are Available.");
+				return false;
+
+			}
+			System.out.println("----Available ItemOffers: ");
+			for (ItemOffer itemOffer : list) {
+				System.out.println(itemOffer);
+			}
+			System.out.println("--x--");
+			return true;
+		} catch (BusinessException e) {
+			log.error("....ERROR: " + e.getMessage());
+			log.info("------------RETRY WITH VALID VALUES---------");
+			return false;
+		}
 	}
 
 	private static void addItem() {
@@ -229,9 +287,10 @@ public class ShopMain {
 		do {
 			log.info("------------CUSTOMER MENU---------");
 			log.info("1)View available items");
-			log.info("....2)Make an offer for an item");
-			log.info("....3)Make payments an item");
-			log.info("....4)view paymentsfor  an item");
+			log.info("....2)View my purchases");
+			log.info("....3)Make an offer for an item");
+			log.info("....4)Make payments an item");
+			log.info("....5)view paymentsfor  an item");
 			log.info("0)Back to Main Menu");
 			log.info("-----------------");
 
@@ -242,19 +301,23 @@ public class ShopMain {
 			switch (ch) {
 			case 1:
 				log.info("1)View available items");
-//				viewMyAccounts();
+				printAvailableItems();
+				break;
+			case 2:
+				log.info("1)View my purchases");
+
 				break;
 			case 3:
 				log.info("....2)Make an offer for an item");
-//				makeAnOffer();
+				makeOfferForItem();
 				break;
 			case 4:
 				log.info("....3)Make payments an item");
-//				makePayments();
+				makePayments();
 				break;
 			case 5:
-				log.info("....4)view paymentsfor  an item");
-//				makePayments();
+				log.info("....4)view payments for an item");
+				viewPayments();
 				break;
 
 			case 0:
@@ -266,6 +329,69 @@ public class ShopMain {
 			}
 
 		} while (ch != 0);
+	}
+
+	private static void makeOfferForItem() {
+
+		int item_id = getInputInt("item_id");
+		int customer_id = currentUser.getId();
+		double offer_price = getInputDouble("offer_price");
+		int quantity = getInputInt("quantity");
+		int plan_weeks_count = getInputInt("plan_weeks_count");
+		Date sqlDate = new Date(System.currentTimeMillis());
+
+		ItemOffer itemOffer = new ItemOffer();
+		itemOffer.setItem_id(item_id);
+		itemOffer.setCustomer_id(customer_id);
+		itemOffer.setOffer_price(offer_price);
+		itemOffer.setOffer_date(sqlDate);
+		itemOffer.setQuantity(quantity);
+		itemOffer.setPlan_weeks_count(plan_weeks_count);
+
+		ItemOfferDAO dao = new ItemOfferDAOImpl();
+		try {
+			dao.addItemOffer(itemOffer);
+			log.info("------------Item OFFER Added---------");
+		} catch (BusinessException e) {
+			log.error("....ERROR: " + e.getMessage());
+			log.info("------------RETRY WITH VALID VALUES---------");
+		}
+
+	}
+
+	private static void viewPayments() {
+		// TODO Auto-generated method stub
+
+	}
+
+	private static void makePayments() {
+		// TODO Auto-generated method stub
+
+	}
+
+	private static void updateItemPricebyId() {
+		// TODO Auto-generated method stub
+
+	}
+
+	private static void printAvailableItems() {
+		ItemDAO itemDAO = new ItemDAOImpl();
+		try {
+			List<Item> list = itemDAO.getAvailableItems();
+			if (list == null || list.isEmpty()) {
+				System.out.println("----NO Items are Available.");
+				return;
+
+			}
+			System.out.println("----Available Items: ");
+			for (Item item : list) {
+				System.out.println(item);
+			}
+			System.out.println("--x--");
+		} catch (BusinessException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	private static void signup() {
@@ -289,7 +415,6 @@ public class ShopMain {
 			System.out.println("ERROR: " + e1.getMessage());
 			return;
 		}
-
 
 		String password = getInputString("password");
 		String role = getInputString("role");
@@ -335,15 +460,15 @@ public class ShopMain {
 				break;
 			case 2:
 				log.info("....2)edit existing items");
-//				viewMyAccounts();
+				viewMyAccounts();
 				break;
 			case 3:
 				log.info("....2)fire employees");
-//				makeAnOffer();
+				fireEmployee();
 				break;
 			case 4:
 				log.info("....2)view sales history of all offers");
-//				makePayments();
+				makePayments();
 				break;
 
 			case 0:
@@ -355,6 +480,24 @@ public class ShopMain {
 			}
 
 		} while (ch != 0);
+	}
+
+	private static void fireEmployee() {
+		// TODO Auto-generated method stub
+
+	}
+
+	private static void viewMyAccounts() {
+		ItemDAO itemdao = new ItemDAOImpl();
+		System.out.println("View my items purchased");
+		String purchases = scanner.nextLine();
+		System.out.println("Enter a ten digit item number");
+		int itemid = scanner.nextInt();
+		if (!DataValidations.isValidItemNumber(itemid)) {
+			System.out.println("invalid item number");
+			return;
+		}
+
 	}
 
 	private static void addEmployeeAccount() {
@@ -379,7 +522,6 @@ public class ShopMain {
 			return;
 		}
 
-
 		String password = getInputString("password");
 		String role = "employee";
 
@@ -400,8 +542,6 @@ public class ShopMain {
 			System.out.println("ERROR: " + e.getMessage());
 		}
 
-
-		
 	}
 
 }

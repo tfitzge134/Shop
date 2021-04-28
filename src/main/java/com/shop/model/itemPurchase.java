@@ -2,14 +2,14 @@ package com.shop.model;
 
 import java.sql.Date;
 
-public class itemPurchase {
+public class ItemPurchase {
 	private int itemId ;
 	private int customerId;
 	private double offerPrice;
 	private Date offerDate;
 	private double quantity;
 	boolean isAccepted;
-	public itemPurchase(int itemId, int customerId, double offerPrice, Date offerDate, double quantity,
+	public ItemPurchase(int itemId, int customerId, double offerPrice, Date offerDate, double quantity,
 			boolean isAccepted) {
 		super();
 		this.itemId = itemId;

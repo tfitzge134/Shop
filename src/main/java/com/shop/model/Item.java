@@ -74,4 +74,5 @@ public class Item {
 				+ ", promotionStartDate=" + promotionStartDate + ", itemPromotionEndDate=" + itemPromotionEndDate + "]";
 	}
 
+
 }

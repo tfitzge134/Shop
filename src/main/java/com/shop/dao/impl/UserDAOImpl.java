@@ -35,8 +35,8 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	public User verifyPassword(String email, String password) throws BusinessException {
-		try {
-			Connection conn = PostgresConnection.getConnection();
+		try (Connection conn = PostgresConnection.openConnection()){
+			
 			String sql = "select * from shop.user where email = ? and password = ?";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, email);

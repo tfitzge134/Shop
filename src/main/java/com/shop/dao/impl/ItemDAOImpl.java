@@ -19,11 +19,8 @@ public class ItemDAOImpl implements ItemDAO {
 	public int addItem(Item item) throws BusinessException {
 		try (Connection connection = PostgresConnection.openConnection()) {
 
-			String sql = "INSERT INTO shop.items (" 
-			+ "	itemName, "
-			+ " itemPrice, "
-					+ " item_promotion_discount, item_quantity,"
-					+ " promotion_start_date, promotion_end_date) "
+			String sql = "INSERT INTO shop.items (" + "	itemName, " + " itemPrice, "
+					+ " item_promotion_discount, item_quantity," + " promotion_start_date, promotion_end_date) "
 					+ "	VALUES (?, ?, ?, ?, ?, ?)";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			int index = 1;
@@ -44,55 +41,38 @@ public class ItemDAOImpl implements ItemDAO {
 	}
 
 	public List<Item> getAvailableItems() throws BusinessException {
-		List<Item> item = new ArrayList<>();
+		List<Item> itemsList = new ArrayList<>();
 		try (Connection connection = PostgresConnection.openConnection()) {
-			String sql = ("Select * from shop.item where" + "items.qtyOnHand>0");
+			String sql = "Select * from shop.items where item_quantity > 0";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				Item item1 = new Item();
 				item1.setItemid(resultSet.getInt("itemid"));
-				item1.setItemName(resultSet.getString("itemName"));
-				item1.setItemPrice(resultSet.getDouble("itemPrice"));
-				item1.setItemPromotionalDiscount(resultSet.getDouble("itemPromotionDiscount"));
-				item1.setItemQuantity(resultSet.getInt("itemQuantity"));
+				item1.setItemName(resultSet.getString("itemname"));
+				item1.setItemPrice(resultSet.getDouble("itemprice"));
+				item1.setItemPromotionalDiscount(resultSet.getDouble("item_promotion_discount"));
+				item1.setItemQuantity(resultSet.getInt("item_quantity"));
+				item1.setItemPromotionEndDate(resultSet.getDate("promotion_end_date"));
+				item1.setPromotionStartDate(resultSet.getDate("promotion_start_date"));
 
-				item1.setItemPromotionEndDate(resultSet.getDate("itemPromotionEnd"));
-				((List<Item>) item1).add(item1);
-				// item1.set(resultSet.getInt("customerid"));
-//				account.setAccountType(resultSet.getString("accountType"));
-//				account.setOpeningbalance(resultSet.getDouble("openingbalance"));
-//				list.add(account);
-
+				itemsList.add(item1);
 			}
-			return item;
+			return itemsList;
 		} catch (Exception e) {
-			// log.error(e);
 			e.printStackTrace();
 			throw new BusinessException("Internal error: " + e.getMessage());
 		}
 	}
 
 	@Override
-	public int getAvailableItems(int itemId) {
-		// TODO Auto-generated method stub
+	public int updateItemPricebyId(int itemid) throws BusinessException {
+
 		return 0;
 	}
 
 	@Override
-	public int deleteItemsById(int itemId) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int updateItemPricebyID(int itemid) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int updateItembyId(int itemid) {
+	public int getAvailableItemsbyId(int itemid) throws BusinessException {
 		// TODO Auto-generated method stub
 		return 0;
 	}
