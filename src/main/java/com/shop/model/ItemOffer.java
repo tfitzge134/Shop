@@ -13,6 +13,7 @@ public class ItemOffer {
 	private boolean is_accepted;
 	private int plan_weeks_count;
 	private boolean is_paid;
+	private int paid_weeks_count;
 
 	public int getId() {
 		return id;
@@ -86,11 +87,20 @@ public class ItemOffer {
 		this.is_paid = is_paid;
 	}
 
+	public int getPaid_weeks_count() {
+		return paid_weeks_count;
+	}
+
+	public void setPaid_weeks_count(int paid_weeks_count) {
+		this.paid_weeks_count = paid_weeks_count;
+	}
+
 	@Override
 	public String toString() {
 		return "ItemOffer [id=" + id + ", item_id=" + item_id + ", customer_id=" + customer_id + ", offer_price="
 				+ offer_price + ", offer_date=" + offer_date + ", quantity=" + quantity + ", is_accepted=" + is_accepted
-				+ ", plan_weeks_count=" + plan_weeks_count + ", is_paid=" + is_paid + "]";
+				+ ", plan_weeks_count=" + plan_weeks_count + ", is_paid=" + is_paid + ", paid_weeks_count="
+				+ paid_weeks_count + "]";
 	}
 
 }

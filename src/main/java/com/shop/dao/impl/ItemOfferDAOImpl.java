@@ -53,6 +53,7 @@ public class ItemOfferDAOImpl implements ItemOfferDAO {
 				itemOffer1.setOffer_date(resultSet.getDate("offer_date"));
 				itemOffer1.setQuantity(resultSet.getInt("quantity"));
 				itemOffer1.setPlan_weeks_count(resultSet.getInt("plan_weeks_count"));
+				itemOffer1.setPaid_weeks_count(resultSet.getInt("paid_weeks_count"));
 
 				itemOffersList.add(itemOffer1);
 			}
@@ -79,6 +80,42 @@ public class ItemOfferDAOImpl implements ItemOfferDAO {
 			throw new BusinessException("Internal error: " + e.getMessage());
 		}
 
+	}
+
+	@Override
+	public List<ItemOffer> getAvailableItemOffersByCustomerId(int customerId) throws BusinessException {
+		List<ItemOffer> itemOffersList = new ArrayList<>();
+		try (Connection connection = PostgresConnection.openConnection()) {
+			String sql = "Select * from shop.itemoffer where "
+					+ " customer_id = ? AND is_accepted = true AND paid_weeks_count < plan_weeks_count";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, customerId);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				ItemOffer itemOffer1 = new ItemOffer();
+
+				itemOffer1.setId(resultSet.getInt("id"));
+				itemOffer1.setItem_id(resultSet.getInt("item_id"));
+				itemOffer1.setCustomer_id(resultSet.getInt("customer_id"));
+				itemOffer1.setOffer_price(resultSet.getDouble("offer_price"));
+				itemOffer1.setOffer_date(resultSet.getDate("offer_date"));
+				itemOffer1.setQuantity(resultSet.getInt("quantity"));
+				itemOffer1.setPlan_weeks_count(resultSet.getInt("plan_weeks_count"));
+				itemOffer1.setPaid_weeks_count(resultSet.getInt("paid_weeks_count"));
+
+				itemOffersList.add(itemOffer1);
+			}
+			return itemOffersList;
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new BusinessException("Internal error: " + e.getMessage());
+		}
+	}
+
+	@Override
+	public List<ItemOffer> getAcceptedItemOffersByCustomerId(int customerId) throws BusinessException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

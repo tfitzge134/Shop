@@ -77,4 +77,20 @@ public class ItemDAOImpl implements ItemDAO {
 		return 0;
 	}
 
+	@Override
+	public int deleteItemById(int id) throws BusinessException {
+		try (Connection connection = PostgresConnection.openConnection()) {
+
+			String sql = "DELETE From shop.items WHERE itemid = ?";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, id);
+			int count = preparedStatement.executeUpdate();
+			return count;
+
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+			throw new BusinessException("Internal error: " + e.getMessage());
+		}
+	}
+
 }

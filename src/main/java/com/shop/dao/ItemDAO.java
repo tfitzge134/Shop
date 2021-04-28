@@ -14,7 +14,7 @@ public interface ItemDAO {
 
 	public int getAvailableItemsbyId(int itemid)throws BusinessException;// view times
 
-	//public int deleteItemsById(int itemid)throws BusinessException;// delete items when offer is made
+	public int deleteItemById(int id)throws BusinessException;
 
 	public List<Item> getAvailableItems() throws BusinessException; // view allitems
 	

@@ -135,6 +135,10 @@ public class ShopMain {
 				log.info("2)Accept or reject a pending offer");
 				acceptOrRejectOffer();
 				break;
+			case 3:
+				log.info("3)Remove an item from the shop");
+				removeItemFromShop();
+				break;
 			case 0:
 				log.info("....0)Back to Main Menu");
 
@@ -144,6 +148,27 @@ public class ShopMain {
 			}
 
 		} while (ch != 0);
+
+	}
+
+	private static void removeItemFromShop() {
+		boolean available = printAvailableItems();
+		if (!available) {
+			return;
+		}
+		int itemId = getInputInt("Item Id");
+		ItemDAO itemDAO = new ItemDAOImpl();
+		try {
+			int count = itemDAO.deleteItemById(itemId);
+			if (count == 1) {
+				log.info("------------Item Deleted successfully.--------");
+			} else {
+				log.info("------------Could NOT Delete Item.--------");
+			}
+		} catch (BusinessException e) {
+			log.error("....ERROR: " + e.getMessage());
+			log.info("------------RETRY WITH VALID VALUES---------");
+		}
 
 	}
 
@@ -157,7 +182,7 @@ public class ShopMain {
 		boolean isAccepted = false;
 		if ("Accept".equalsIgnoreCase(input)) {
 			isAccepted = true;
-		} else if ("Rejet".equalsIgnoreCase(input)) {
+		} else if ("Reject".equalsIgnoreCase(input)) {
 			isAccepted = false;
 		} else {
 			System.out.println("----Invalid input: " + input);
@@ -170,7 +195,8 @@ public class ShopMain {
 
 			System.out.println("----Item Offer updated: isAccepted " + isAccepted);
 		} catch (BusinessException e) {
-			e.printStackTrace();
+			log.error("....ERROR: " + e.getMessage());
+			log.info("------------RETRY WITH VALID VALUES---------");
 		}
 
 	}
@@ -179,22 +205,26 @@ public class ShopMain {
 		ItemOfferDAO itemOfferDAO = new ItemOfferDAOImpl();
 		try {
 			List<ItemOffer> list = itemOfferDAO.getAvailableItemOffers();
-			if (list == null || list.isEmpty()) {
-				System.out.println("----NO ItemOffers are Available.");
-				return false;
-
-			}
-			System.out.println("----Available ItemOffers: ");
-			for (ItemOffer itemOffer : list) {
-				System.out.println(itemOffer);
-			}
-			System.out.println("--x--");
-			return true;
+			return printItemOffers(list);
 		} catch (BusinessException e) {
 			log.error("....ERROR: " + e.getMessage());
 			log.info("------------RETRY WITH VALID VALUES---------");
 			return false;
 		}
+	}
+
+	private static boolean printItemOffers(List<ItemOffer> list) {
+		if (list == null || list.isEmpty()) {
+			System.out.println("----NO ItemOffers are Available.");
+			return false;
+
+		}
+		System.out.println("----Available ItemOffers: ");
+		for (ItemOffer itemOffer : list) {
+			System.out.println(itemOffer);
+		}
+		System.out.println("--x--");
+		return true;
 	}
 
 	private static void addItem() {
@@ -304,20 +334,25 @@ public class ShopMain {
 				printAvailableItems();
 				break;
 			case 2:
-				log.info("1)View my purchases");
+				log.info("....2)View my purchases");
+				viewMyPurchases();
 
 				break;
 			case 3:
-				log.info("....2)Make an offer for an item");
+				log.info("....3)Make an offer for an item");
 				makeOfferForItem();
 				break;
 			case 4:
-				log.info("....3)Make payments an item");
+				log.info("....4)Make payments an item");
 				makePayments();
 				break;
 			case 5:
-				log.info("....4)view payments for an item");
+				log.info("....5)view payments for an item");
 				viewPayments();
+				break;
+			case 6:
+				log.info("....6) View documents");
+				latePaymentLetter();
 				break;
 
 			case 0:
@@ -329,6 +364,23 @@ public class ShopMain {
 			}
 
 		} while (ch != 0);
+	}
+
+	private static void viewMyPurchases() {
+		ItemOfferDAO dao = new ItemOfferDAOImpl();
+		try {
+			List<ItemOffer> list = dao.getAvailableItemOffersByCustomerId(currentUser.getId());
+			printItemOffers(list);
+		} catch (BusinessException e) {
+			log.error("....ERROR: " + e.getMessage());
+			log.info("------------RETRY WITH VALID VALUES---------");
+		}
+		
+	}
+
+	private static void latePaymentLetter() {
+		// TODO Auto-generated method stub
+
 	}
 
 	private static void makeOfferForItem() {
@@ -374,13 +426,13 @@ public class ShopMain {
 
 	}
 
-	private static void printAvailableItems() {
+	private static boolean printAvailableItems() {
 		ItemDAO itemDAO = new ItemDAOImpl();
 		try {
 			List<Item> list = itemDAO.getAvailableItems();
 			if (list == null || list.isEmpty()) {
 				System.out.println("----NO Items are Available.");
-				return;
+				return false;
 
 			}
 			System.out.println("----Available Items: ");
@@ -388,8 +440,11 @@ public class ShopMain {
 				System.out.println(item);
 			}
 			System.out.println("--x--");
+			return true;
 		} catch (BusinessException e) {
 			e.printStackTrace();
+			System.out.println("ERROR: " + e.getMessage());
+			return false;
 		}
 
 	}
