@@ -83,11 +83,11 @@ public class ItemOfferDAOImpl implements ItemOfferDAO {
 	}
 
 	@Override
-	public List<ItemOffer> getAvailableItemOffersByCustomerId(int customerId) throws BusinessException {
+	public List<ItemOffer> getItemOffersByCustomerId(int customerId) throws BusinessException {
 		List<ItemOffer> itemOffersList = new ArrayList<>();
 		try (Connection connection = PostgresConnection.openConnection()) {
 			String sql = "Select * from shop.itemoffer where "
-					+ " customer_id = ? AND is_accepted = true AND paid_weeks_count < plan_weeks_count";
+					+ " customer_id = ? AND paid_weeks_count < plan_weeks_count";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1, customerId);
 			ResultSet resultSet = preparedStatement.executeQuery();

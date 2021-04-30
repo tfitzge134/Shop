@@ -9,13 +9,16 @@ import org.apache.log4j.Logger;
 
 import com.shop.dao.ItemDAO;
 import com.shop.dao.ItemOfferDAO;
+import com.shop.dao.PaymentDAO;
 import com.shop.dao.UserDAO;
 import com.shop.dao.impl.ItemDAOImpl;
 import com.shop.dao.impl.ItemOfferDAOImpl;
+import com.shop.dao.impl.PaymentDAOImpl;
 import com.shop.dao.impl.UserDAOImpl;
 import com.shop.exception.BusinessException;
 import com.shop.model.Item;
 import com.shop.model.ItemOffer;
+import com.shop.model.Payment;
 import com.shop.model.User;
 import com.shop.util.DataValidations;
 
@@ -348,7 +351,7 @@ public class ShopMain {
 				break;
 			case 5:
 				log.info("....5)view payments for an item");
-				viewPayments();
+				printPayments();
 				break;
 			case 6:
 				log.info("....6) View documents");
@@ -369,7 +372,7 @@ public class ShopMain {
 	private static void viewMyPurchases() {
 		ItemOfferDAO dao = new ItemOfferDAOImpl();
 		try {
-			List<ItemOffer> list = dao.getAvailableItemOffersByCustomerId(currentUser.getId());
+			List<ItemOffer> list = dao.getItemOffersByCustomerId(currentUser.getId());
 			printItemOffers(list);
 		} catch (BusinessException e) {
 			log.error("....ERROR: " + e.getMessage());
@@ -411,13 +414,45 @@ public class ShopMain {
 
 	}
 
-	private static void viewPayments() {
-		// TODO Auto-generated method stub
-
+	private static void printPayments() {
+//	ItemOfferDAO dao = new ItemOfferDAOImpl();
+//		try {
+//			List<Payment> list = dao.paymentsByCustomerId(currentUser.getId());
+//			printPayments(list);
+//		} catch (BusinessException e) {
+//			log.error("....ERROR: " + e.getMessage());
+//			log.info("------------RETRY WITH VALID VALUES---------");
+//		}
+		
 	}
-
+//		
+	
 	private static void makePayments() {
-		// TODO Auto-generated method stub
+	
+
+		int itemoffer_id = 
+				getInputInt("itemoffer_id");
+		//int customer_id = currentUser.getId();
+		double amount = getInputDouble("amount");
+		Date sqlDate = new Date(System.currentTimeMillis());
+
+		
+		Payment payment = new Payment();
+		payment.setItemoffer_id(itemoffer_id);
+		payment.setAmount(amount);
+		payment.setPaid_date(sqlDate);
+		payment.setUser_id(currentUser.getId());
+		
+		PaymentDAO dao = new PaymentDAOImpl();
+		try {
+			dao.makePayment(payment);
+			//dao.addItemOffer(itemOffer);
+			log.info("------------payment Added---------");
+		} catch (BusinessException e) {
+			log.error("....ERROR: " + e.getMessage());
+			log.info("------------RETRY WITH VALID VALUES---------");
+		}
+		
 
 	}
 

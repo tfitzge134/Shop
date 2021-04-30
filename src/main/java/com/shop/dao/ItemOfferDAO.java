@@ -12,7 +12,7 @@ public interface ItemOfferDAO {
 
 	public List<ItemOffer> getAvailableItemOffers() throws BusinessException;
 
-	public List<ItemOffer> getAvailableItemOffersByCustomerId(int customerId) throws BusinessException;
+	public List<ItemOffer> getItemOffersByCustomerId(int customerId) throws BusinessException;
 	public List<ItemOffer> getAcceptedItemOffersByCustomerId(int customerId) throws BusinessException;
 
 }
