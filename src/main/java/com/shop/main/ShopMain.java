@@ -1,9 +1,20 @@
 package com.shop.main;
 
+import java.security.Security;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Properties;
 import java.util.Scanner;
+
+import java.util.*;  
+import javax.mail.*;  
+import javax.mail.internet.*;  
+
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.util.Properties;
 
 import org.apache.log4j.Logger;
 
@@ -22,6 +33,9 @@ import com.shop.model.Payment;
 import com.shop.model.User;
 import com.shop.util.DataValidations;
 import com.shop.util.WelcomeLetterUtil;
+import com.sun.mail.smtp.SMTPTransport;
+
+
 
 //Run the program with argument: -Dlog4j.configuration=log4j.properties
 public class ShopMain {
@@ -547,7 +561,8 @@ public class ShopMain {
 			log.info("1)Add employee accounts");
 			log.info("2)edit existing items");
 			log.info("3.Fire employees");
-			log.info("4.view sales history of all offers");
+			log.info("4, send got fired email");
+			log.info("5.view sales history of all offers");
 			log.info("0)Back to Main Menu");
 			log.info("-----------------");
 
@@ -567,9 +582,13 @@ public class ShopMain {
 			case 3:
 				log.info("....3)Fire employees");
 				fireEmployee();
-				break;
 			case 4:
-				log.info("....2)view sales history of all offers");
+				log.info("....4)Send got fired email");
+				sendEmail();
+				break;
+			
+			case 5:
+				log.info("....5)view sales history of all offers");
 				makePayments();
 				break;
 
@@ -583,6 +602,63 @@ public class ShopMain {
 
 		} while (ch != 0);
 	}
+
+	private static void sendEmail() {
+	
+
+			
+
+				///public class SendEmailSSL {
+
+				   // public static void main(String[] args) {
+
+				        final String username = "tfitzge134@gmail.com";
+				        final String password = "Foxy2019";
+
+				        Properties prop = new Properties();
+				        prop.put("mail.smtp.host", "smtp.gmail.com");
+				        prop.put("mail.smtp.port", "465");
+				        prop.put("mail.smtp.auth", "true");
+				        prop.put("mail.smtp.socketFactory.port", "465");
+				        prop.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+				        
+				        Session session = Session.getInstance(prop,
+				                new javax.mail.Authenticator() {
+				                    protected PasswordAuthentication getPasswordAuthentication() {
+				                        return new PasswordAuthentication(username, password);
+				                    }
+				                });
+
+				        try {
+
+				            Message message = new MimeMessage(session);
+				            message.setFrom(new InternetAddress("tfitzge134@gmail.com"));
+				            message.setRecipients(
+				                    Message.RecipientType.TO,
+				                    InternetAddress.parse("gfitzgerald@gmail.com, tfitzge134@yahoo.com")
+				            );
+				            message.setSubject("YOU ARE FIRED");
+				            //we need add the customer name.
+				            message.setText("Dear Employee,"
+				                    + "\n\n we have decided that your services are not longer needed."+
+				            		"\n\n we wish you good the best luck in your proffesional journey");
+
+				            Transport.send(message);
+
+				            System.out.println("Done");
+
+				        } catch (MessagingException e) {
+				            e.printStackTrace();
+				        }
+				    }
+
+			
+
+
+		  
+	 
+		
+
 
 	private static void fireEmployee() {
 		String email = getInputString("Employee Email");
