@@ -4401,3 +4401,271 @@
 47194 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
 47195 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
 47195 [main] INFO  com.shop.main.ShopMain  - -----------------
+0    [main] INFO  com.shop.main.ShopMain  - Shop Appplication Started.
+3    [main] INFO  com.shop.main.ShopMain  - Welcome to Teresa's Shop,  where every day is a happy day
+3    [main] INFO  com.shop.main.ShopMain  - ================================================
+3    [main] INFO  com.shop.main.ShopMain  - Teresa's Shop App V1.0
+3    [main] INFO  com.shop.main.ShopMain  - ================================================
+4    [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+4    [main] INFO  com.shop.main.ShopMain  - Shop MENU
+4    [main] INFO  com.shop.main.ShopMain  - -----------------
+4    [main] INFO  com.shop.main.ShopMain  - 1)Login
+4    [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+4    [main] INFO  com.shop.main.ShopMain  - 0)Exit
+4    [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+5547 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+5548 [main] INFO  com.shop.main.ShopMain  - Enter email:
+12986 [main] INFO  com.shop.main.ShopMain  - Enter password:
+16208 [main] INFO  com.shop.main.ShopMain  - ------------Login result---------
+16208 [main] INFO  com.shop.main.ShopMain  - Person LOGIN Success!
+16208 [main] INFO  com.shop.main.ShopMain  - User [id=12, email=aaa@aaa.com, role=customer]
+16209 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+16209 [main] INFO  com.shop.main.ShopMain  - 1)View available items
+16209 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+16209 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+16209 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments an item
+16209 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+16210 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+16210 [main] INFO  com.shop.main.ShopMain  - -----------------
+18841 [main] INFO  com.shop.main.ShopMain  - 1)View available items
+18936 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+18936 [main] INFO  com.shop.main.ShopMain  - 1)View available items
+18936 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+18936 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+18936 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments an item
+18937 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+18937 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+18937 [main] INFO  com.shop.main.ShopMain  - -----------------
+50740 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+50744 [main] INFO  com.shop.main.ShopMain  - Please enter item_id: 
+55890 [main] INFO  com.shop.main.ShopMain  - Please enter offer_price: 
+59896 [main] INFO  com.shop.main.ShopMain  - Please enter quantity: 
+61177 [main] INFO  com.shop.main.ShopMain  - Please enter plan_weeks_count: 
+65658 [main] INFO  com.shop.main.ShopMain  - ------------Item OFFER Added---------
+65658 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+65658 [main] INFO  com.shop.main.ShopMain  - 1)View available items
+65658 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+65658 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+65658 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments an item
+65660 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+65660 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+65660 [main] INFO  com.shop.main.ShopMain  - -----------------
+80902 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+80940 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+80940 [main] INFO  com.shop.main.ShopMain  - 1)View available items
+80940 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+80940 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+80940 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments an item
+80940 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+80940 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+80940 [main] INFO  com.shop.main.ShopMain  - -----------------
+85544 [main] INFO  com.shop.main.ShopMain  - ....0)Back to Main Menu
+85544 [main] INFO  com.shop.main.ShopMain  - Invalid Choice... Please enter a proper choice.
+85545 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+85545 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+85545 [main] INFO  com.shop.main.ShopMain  - -----------------
+85545 [main] INFO  com.shop.main.ShopMain  - 1)Login
+85545 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+85546 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+85546 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+87692 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+87692 [main] INFO  com.shop.main.ShopMain  - Enter email:
+101636 [main] INFO  com.shop.main.ShopMain  - Enter password:
+104540 [main] INFO  com.shop.main.ShopMain  - User LOGIN FAILED!
+104643 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+104643 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+104643 [main] INFO  com.shop.main.ShopMain  - -----------------
+104643 [main] INFO  com.shop.main.ShopMain  - 1)Login
+104643 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+104644 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+104644 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+110320 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+110436 [main] INFO  com.shop.main.ShopMain  - Enter email:
+128991 [main] INFO  com.shop.main.ShopMain  - Enter password:
+131268 [main] INFO  com.shop.main.ShopMain  - ------------Login result---------
+131268 [main] INFO  com.shop.main.ShopMain  - Person LOGIN Success!
+131268 [main] INFO  com.shop.main.ShopMain  - User [id=10, email=1234@gmail.com, role=employee]
+131268 [main] INFO  com.shop.main.ShopMain  - ------------EMPLOYEE MENU---------
+131269 [main] INFO  com.shop.main.ShopMain  - 1)Add Item
+131269 [main] INFO  com.shop.main.ShopMain  - 2)Accept or reject a pending offer
+131269 [main] INFO  com.shop.main.ShopMain  - 3)Remove an item from the shop
+131269 [main] INFO  com.shop.main.ShopMain  - 4)view all payments
+131269 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+131269 [main] INFO  com.shop.main.ShopMain  - -----------------
+138733 [main] INFO  com.shop.main.ShopMain  - 2)Accept or reject a pending offer
+138765 [main] INFO  com.shop.main.ShopMain  - Please enter Offer Id: 
+152375 [main] INFO  com.shop.main.ShopMain  - Please enter Accept OR Reject: 
+156683 [main] INFO  com.shop.main.ShopMain  - ------------EMPLOYEE MENU---------
+156683 [main] INFO  com.shop.main.ShopMain  - 1)Add Item
+156683 [main] INFO  com.shop.main.ShopMain  - 2)Accept or reject a pending offer
+156683 [main] INFO  com.shop.main.ShopMain  - 3)Remove an item from the shop
+156683 [main] INFO  com.shop.main.ShopMain  - 4)view all payments
+156684 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+156684 [main] INFO  com.shop.main.ShopMain  - -----------------
+174410 [main] INFO  com.shop.main.ShopMain  - 2)Accept or reject a pending offer
+174441 [main] INFO  com.shop.main.ShopMain  - Please enter Offer Id: 
+180412 [main] INFO  com.shop.main.ShopMain  - Please enter Accept OR Reject: 
+185513 [main] INFO  com.shop.main.ShopMain  - ------------EMPLOYEE MENU---------
+185513 [main] INFO  com.shop.main.ShopMain  - 1)Add Item
+185513 [main] INFO  com.shop.main.ShopMain  - 2)Accept or reject a pending offer
+185515 [main] INFO  com.shop.main.ShopMain  - 3)Remove an item from the shop
+185515 [main] INFO  com.shop.main.ShopMain  - 4)view all payments
+185515 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+185515 [main] INFO  com.shop.main.ShopMain  - -----------------
+192337 [main] INFO  com.shop.main.ShopMain  - 2)Accept or reject a pending offer
+192373 [main] INFO  com.shop.main.ShopMain  - Please enter Offer Id: 
+196383 [main] INFO  com.shop.main.ShopMain  - Please enter Accept OR Reject: 
+201797 [main] INFO  com.shop.main.ShopMain  - ------------EMPLOYEE MENU---------
+201797 [main] INFO  com.shop.main.ShopMain  - 1)Add Item
+201797 [main] INFO  com.shop.main.ShopMain  - 2)Accept or reject a pending offer
+201797 [main] INFO  com.shop.main.ShopMain  - 3)Remove an item from the shop
+201797 [main] INFO  com.shop.main.ShopMain  - 4)view all payments
+201798 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+201798 [main] INFO  com.shop.main.ShopMain  - -----------------
+332226 [main] INFO  com.shop.main.ShopMain  - ....0)Back to Main Menu
+332227 [main] INFO  com.shop.main.ShopMain  - Invalid Choice... Please enter a proper choice.
+332228 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+332228 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+332228 [main] INFO  com.shop.main.ShopMain  - -----------------
+332228 [main] INFO  com.shop.main.ShopMain  - 1)Login
+332228 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+332228 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+332228 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+334246 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+334246 [main] INFO  com.shop.main.ShopMain  - Enter email:
+338944 [main] INFO  com.shop.main.ShopMain  - Enter password:
+340895 [main] INFO  com.shop.main.ShopMain  - ------------Login result---------
+340895 [main] INFO  com.shop.main.ShopMain  - Person LOGIN Success!
+340895 [main] INFO  com.shop.main.ShopMain  - User [id=12, email=aaa@aaa.com, role=customer]
+340895 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+340895 [main] INFO  com.shop.main.ShopMain  - 1)View available items
+340895 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+340895 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+340896 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments an item
+340896 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+340896 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+340896 [main] INFO  com.shop.main.ShopMain  - -----------------
+345490 [main] INFO  com.shop.main.ShopMain  - 1)View available items
+345514 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+345514 [main] INFO  com.shop.main.ShopMain  - 1)View available items
+345514 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+345514 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+345514 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments an item
+345514 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+345515 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+345515 [main] INFO  com.shop.main.ShopMain  - -----------------
+360605 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+360635 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+360635 [main] INFO  com.shop.main.ShopMain  - 1)View available items
+360635 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+360635 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+360635 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments an item
+360635 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+360635 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+360635 [main] INFO  com.shop.main.ShopMain  - -----------------
+373407 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+373436 [main] INFO  com.shop.main.ShopMain  - ------------x---------
+373436 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+448754 [main] INFO  com.shop.main.ShopMain  - Payment [id=10, itemoffer_id=12, amount=5.0, paid_date=2021-04-30, user_id=12]
+448755 [main] INFO  com.shop.main.ShopMain  - ---x----
+448755 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+448755 [main] INFO  com.shop.main.ShopMain  - 1)View available items
+448755 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+448755 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+448755 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments an item
+448755 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+448755 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+448755 [main] INFO  com.shop.main.ShopMain  - -----------------
+480626 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+480663 [main] INFO  com.shop.main.ShopMain  - ------------x---------
+480663 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+483076 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+483076 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+486582 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+486583 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+486773 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+486773 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+487284 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+487284 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+487652 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+487653 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+488427 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+488429 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+488871 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+488872 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+489416 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+489416 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+489941 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+489941 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+490302 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+490302 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+490706 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+490706 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+490940 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+490940 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+491147 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+491148 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+491359 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+491360 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+491706 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+491706 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+492028 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+492029 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+492351 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+492351 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+492874 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+492874 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+493173 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+493173 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+497436 [main] INFO  com.shop.main.ShopMain  - Payment [id=10, itemoffer_id=12, amount=5.0, paid_date=2021-04-30, user_id=12]
+497437 [main] INFO  com.shop.main.ShopMain  - ---x----
+497437 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+497437 [main] INFO  com.shop.main.ShopMain  - 1)View available items
+497437 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+497437 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+497437 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments an item
+497437 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+497437 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+497437 [main] INFO  com.shop.main.ShopMain  - -----------------
+520867 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+520891 [main] INFO  com.shop.main.ShopMain  - ------------x---------
+520891 [main] INFO  com.shop.main.ShopMain  - Please enter itemoffer_id: 
+524365 [main] INFO  com.shop.main.ShopMain  - Payment [id=10, itemoffer_id=12, amount=5.0, paid_date=2021-04-30, user_id=12]
+524365 [main] INFO  com.shop.main.ShopMain  - ---x----
+524365 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+524365 [main] INFO  com.shop.main.ShopMain  - 1)View available items
+524365 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+524365 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+524365 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments an item
+524365 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+524365 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+524365 [main] INFO  com.shop.main.ShopMain  - -----------------
+534924 [main] INFO  com.shop.main.ShopMain  - ....0)Back to Main Menu
+534924 [main] INFO  com.shop.main.ShopMain  - Invalid Choice... Please enter a proper choice.
+534924 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+534924 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+534924 [main] INFO  com.shop.main.ShopMain  - -----------------
+534924 [main] INFO  com.shop.main.ShopMain  - 1)Login
+534924 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+534924 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+534925 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+541226 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+541226 [main] INFO  com.shop.main.ShopMain  - Enter email:
+545982 [main] INFO  com.shop.main.ShopMain  - Enter password:
+546342 [main] INFO  com.shop.main.ShopMain  - User LOGIN FAILED!
+546342 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+546343 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+546343 [main] INFO  com.shop.main.ShopMain  - -----------------
+546343 [main] INFO  com.shop.main.ShopMain  - 1)Login
+546343 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+546343 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+546343 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+548162 [main] INFO  com.shop.main.ShopMain  - Thank You for using the Shop APP V1.0.....
+548162 [main] INFO  com.shop.main.ShopMain  - Shop Appplication Ended.
+------------
