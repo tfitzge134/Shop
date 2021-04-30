@@ -1,0 +1,3 @@
+Welcome, Customer!
+You've signed up successfully!
+---x---

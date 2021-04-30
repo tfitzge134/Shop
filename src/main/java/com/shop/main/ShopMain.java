@@ -21,6 +21,7 @@ import com.shop.model.ItemOffer;
 import com.shop.model.Payment;
 import com.shop.model.User;
 import com.shop.util.DataValidations;
+import com.shop.util.WelcomeLetterUtil;
 
 //Run the program with argument: -Dlog4j.configuration=log4j.properties
 public class ShopMain {
@@ -428,11 +429,11 @@ public class ShopMain {
 				return;
 			}
 			System.out.println("----Available ItemOffers: ");
-			for(Payment p: list) {
+			for (Payment p : list) {
 				log.info(p);
 			}
 			log.info("---x----");
-			
+
 		} catch (BusinessException e) {
 			log.error("....ERROR: " + e.getMessage());
 			log.info("------------RETRY WITH VALID VALUES---------");
@@ -489,7 +490,7 @@ public class ShopMain {
 			return true;
 		} catch (BusinessException e) {
 			e.printStackTrace();
-			System.out.println("ERROR: " + e.getMessage());
+			log.error("ERROR: " + e.getMessage());
 			return false;
 		}
 
@@ -528,13 +529,13 @@ public class ShopMain {
 		try {
 			boolean success = userDAO.addUser(user);
 			if (success) {
-				System.out.println("User added successfully.");
+				log.info(WelcomeLetterUtil.getWelcomeMessage());
 			} else {
-				System.out.println("Add User FAILED.");
+				log.info("Signup FAILED. Please try again later.");
 			}
 		} catch (BusinessException e) {
 			e.printStackTrace();
-			System.out.println("ERROR: " + e.getMessage());
+			log.error("ERROR: " + e.getMessage());
 		}
 
 	}
@@ -545,7 +546,7 @@ public class ShopMain {
 			log.info("------------Manager MENU---------");
 			log.info("1)Add employee accounts");
 			log.info("2)edit existing items");
-			log.info("3.fire employees");
+			log.info("3.Fire employees");
 			log.info("4.view sales history of all offers");
 			log.info("0)Back to Main Menu");
 			log.info("-----------------");
@@ -564,7 +565,7 @@ public class ShopMain {
 				viewMyAccounts();
 				break;
 			case 3:
-				log.info("....2)fire employees");
+				log.info("....3)Fire employees");
 				fireEmployee();
 				break;
 			case 4:
@@ -584,7 +585,24 @@ public class ShopMain {
 	}
 
 	private static void fireEmployee() {
-		// TODO Auto-generated method stub
+		String email = getInputString("Employee Email");
+		UserDAO userDao = new UserDAOImpl();
+		try {
+			User user = userDao.getByEmail(email);
+			if (user.getRole().equalsIgnoreCase("employee")) {
+				boolean result = userDao.deleteById(user.getId());
+				if (result) {
+					log.info("----EMPLOYEE record DELETED----");
+				} else {
+					log.info("---COULD NOT DELETE EMPLOYEE---");
+				}
+			} else {
+				log.info("Can not delete User with role: " + user.getRole());
+			}
+		} catch (BusinessException e) {
+			e.printStackTrace();
+			log.error("ERROR: " + e.getMessage());
+		}
 
 	}
 
@@ -619,7 +637,7 @@ public class ShopMain {
 			}
 		} catch (BusinessException e1) {
 			e1.printStackTrace();
-			System.out.println("ERROR: " + e1.getMessage());
+			log.error("ERROR: " + e1.getMessage());
 			return;
 		}
 
@@ -640,7 +658,7 @@ public class ShopMain {
 			}
 		} catch (BusinessException e) {
 			e.printStackTrace();
-			System.out.println("ERROR: " + e.getMessage());
+			log.error("ERROR: " + e.getMessage());
 		}
 
 	}
