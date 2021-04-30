@@ -320,10 +320,10 @@ public class ShopMain {
 		do {
 			log.info("------------CUSTOMER MENU---------");
 			log.info("1)View available items");
-			log.info("....2)View my purchases");
-			log.info("....3)Make an offer for an item");
+			log.info("....2)Make an offer for an item");
+			log.info("....3)View my purchases");
 			log.info("....4)Make payments an item");
-			log.info("....5)view paymentsfor  an item");
+			log.info("....5)View payments for item purchase");
 			log.info("0)Back to Main Menu");
 			log.info("-----------------");
 
@@ -337,20 +337,21 @@ public class ShopMain {
 				printAvailableItems();
 				break;
 			case 2:
-				log.info("....2)View my purchases");
-				viewMyPurchases();
-
-				break;
-			case 3:
-				log.info("....3)Make an offer for an item");
+				log.info("....2)Make an offer for an item");
 				makeOfferForItem();
+				break;
+
+			case 3:
+				log.info("....3)View my purchases");
+				printMyPurchases();
+
 				break;
 			case 4:
 				log.info("....4)Make payments an item");
 				makePayments();
 				break;
 			case 5:
-				log.info("....5)view payments for an item");
+				log.info("....5)View payments for item purchase");
 				printPayments();
 				break;
 			case 6:
@@ -369,7 +370,7 @@ public class ShopMain {
 		} while (ch != 0);
 	}
 
-	private static void viewMyPurchases() {
+	private static void printMyPurchases() {
 		ItemOfferDAO dao = new ItemOfferDAOImpl();
 		try {
 			List<ItemOffer> list = dao.getItemOffersByCustomerId(currentUser.getId());
@@ -378,7 +379,7 @@ public class ShopMain {
 			log.error("....ERROR: " + e.getMessage());
 			log.info("------------RETRY WITH VALID VALUES---------");
 		}
-		
+
 	}
 
 	private static void latePaymentLetter() {
@@ -415,44 +416,54 @@ public class ShopMain {
 	}
 
 	private static void printPayments() {
-//	ItemOfferDAO dao = new ItemOfferDAOImpl();
-//		try {
-//			List<Payment> list = dao.paymentsByCustomerId(currentUser.getId());
-//			printPayments(list);
-//		} catch (BusinessException e) {
-//			log.error("....ERROR: " + e.getMessage());
-//			log.info("------------RETRY WITH VALID VALUES---------");
-//		}
-		
-	}
-//		
-	
-	private static void makePayments() {
-	
+		printMyPurchases();
+		log.info("------------x---------");
 
-		int itemoffer_id = 
-				getInputInt("itemoffer_id");
-		//int customer_id = currentUser.getId();
+		int itemoffer_id = getInputInt("itemoffer_id");
+		PaymentDAO dao = new PaymentDAOImpl();
+		try {
+			List<Payment> list = dao.getPaymentsByItemOfferId(itemoffer_id);
+			if (list == null || list.isEmpty()) {
+				System.out.println("----NO Payments found for itemOfferId: " + itemoffer_id);
+				return;
+			}
+			System.out.println("----Available ItemOffers: ");
+			for(Payment p: list) {
+				log.info(p);
+			}
+			log.info("---x----");
+			
+		} catch (BusinessException e) {
+			log.error("....ERROR: " + e.getMessage());
+			log.info("------------RETRY WITH VALID VALUES---------");
+		}
+	}
+
+	private static void makePayments() {
+
+		printMyPurchases();
+		log.info("------------x---------");
+
+		int itemoffer_id = getInputInt("itemoffer_id");
+		// int customer_id = currentUser.getId();
 		double amount = getInputDouble("amount");
 		Date sqlDate = new Date(System.currentTimeMillis());
 
-		
 		Payment payment = new Payment();
 		payment.setItemoffer_id(itemoffer_id);
 		payment.setAmount(amount);
 		payment.setPaid_date(sqlDate);
 		payment.setUser_id(currentUser.getId());
-		
+
 		PaymentDAO dao = new PaymentDAOImpl();
 		try {
-			dao.makePayment(payment);
-			//dao.addItemOffer(itemOffer);
+			dao.addPayment(payment);
+			// dao.addItemOffer(itemOffer);
 			log.info("------------payment Added---------");
 		} catch (BusinessException e) {
 			log.error("....ERROR: " + e.getMessage());
 			log.info("------------RETRY WITH VALID VALUES---------");
 		}
-		
 
 	}
 
