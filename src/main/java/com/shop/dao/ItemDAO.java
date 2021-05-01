@@ -18,5 +18,6 @@ public interface ItemDAO {
 
 	public List<Item> getAvailableItems() throws BusinessException; // view allitems
 	
+	
 
 }

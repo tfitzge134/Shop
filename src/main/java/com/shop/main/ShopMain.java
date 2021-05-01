@@ -337,7 +337,7 @@ public class ShopMain {
 			log.info("1)View available items");
 			log.info("....2)Make an offer for an item");
 			log.info("....3)View my purchases");
-			log.info("....4)Make payments an item");
+			log.info("....4)Make payments on an item");
 			log.info("....5)View payments for item purchase");
 			log.info("0)Back to Main Menu");
 			log.info("-----------------");
@@ -559,10 +559,10 @@ public class ShopMain {
 		do {
 			log.info("------------Manager MENU---------");
 			log.info("1)Add employee accounts");
-			log.info("2)edit existing items");
-			log.info("3.Fire employees");
-			log.info("4, send got fired email");
-			log.info("5.view sales history of all offers");
+			log.info("2)Edit existing items");
+			log.info("3)Fire employees");
+			log.info("4)Send got fired email");
+			log.info("5)View sales history of all offers");
 			log.info("0)Back to Main Menu");
 			log.info("-----------------");
 
@@ -577,7 +577,7 @@ public class ShopMain {
 				break;
 			case 2:
 				log.info("....2)edit existing items");
-				viewMyAccounts();
+				editItems();
 				break;
 			case 3:
 				log.info("....3)Fire employees");
@@ -589,7 +589,7 @@ public class ShopMain {
 			
 			case 5:
 				log.info("....5)view sales history of all offers");
-				makePayments();
+				viewSalesHistory();
 				break;
 
 			case 0:
@@ -603,14 +603,21 @@ public class ShopMain {
 		} while (ch != 0);
 	}
 
+	private static void editItems() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
+	private static void viewSalesHistory() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	private static void sendEmail() {
 	
 
-			
-
-				///public class SendEmailSSL {
-
-				   // public static void main(String[] args) {
 
 				        final String username = "tfitzge134@gmail.com";
 				        final String password = "Foxy2019";
@@ -645,19 +652,12 @@ public class ShopMain {
 
 				            Transport.send(message);
 
-				            System.out.println("Done");
+				            System.out.println(" Your email was sent");
 
 				        } catch (MessagingException e) {
 				            e.printStackTrace();
 				        }
 				    }
-
-			
-
-
-		  
-	 
-		
 
 
 	private static void fireEmployee() {
@@ -686,7 +686,7 @@ public class ShopMain {
 		ItemDAO itemdao = new ItemDAOImpl();
 		System.out.println("View my items purchased");
 		String purchases = scanner.nextLine();
-		System.out.println("Enter a ten digit item number");
+		System.out.println("Enter a five digit item number");
 		int itemid = scanner.nextInt();
 		if (!DataValidations.isValidItemNumber(itemid)) {
 			System.out.println("invalid item number");

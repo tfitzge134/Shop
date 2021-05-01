@@ -118,4 +118,10 @@ public class ItemOfferDAOImpl implements ItemOfferDAO {
 		return null;
 	}
 
+//	@Override
+//	public List<ItemOffer> getAcceptedItemOffersByCustomerId(int customerId) throws BusinessException {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
 }
