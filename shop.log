@@ -6077,3 +6077,219 @@
 145157 [main] INFO  com.shop.main.ShopMain  - -----------------
 155265 [main] INFO  com.shop.main.ShopMain  - ....3)Fire employees
 155266 [main] INFO  com.shop.main.ShopMain  - Please enter Employee Email: 
+0    [main] INFO  com.shop.main.ShopMain  - Shop Appplication Started.
+8    [main] INFO  com.shop.main.ShopMain  - Welcome to Teresa's Shop,  where every day is a happy day
+9    [main] INFO  com.shop.main.ShopMain  - ================================================
+9    [main] INFO  com.shop.main.ShopMain  - Teresa's Shop App V1.0
+9    [main] INFO  com.shop.main.ShopMain  - ================================================
+9    [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+9    [main] INFO  com.shop.main.ShopMain  - Shop MENU
+9    [main] INFO  com.shop.main.ShopMain  - -----------------
+10   [main] INFO  com.shop.main.ShopMain  - 1)Login
+10   [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+10   [main] INFO  com.shop.main.ShopMain  - 0)Exit
+10   [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+2699 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+2699 [main] INFO  com.shop.main.ShopMain  - Enter email:
+84746 [main] INFO  com.shop.main.ShopMain  - Enter password:
+87117 [main] INFO  com.shop.main.ShopMain  - ------------Login result---------
+87118 [main] INFO  com.shop.main.ShopMain  - Person LOGIN Success!
+87118 [main] INFO  com.shop.main.ShopMain  - User [id=11, email=teresa@gmail.com, role=employee]
+87118 [main] INFO  com.shop.main.ShopMain  - ------------EMPLOYEE MENU---------
+87118 [main] INFO  com.shop.main.ShopMain  - 1)Add Item
+87118 [main] INFO  com.shop.main.ShopMain  - 2)Accept or reject a pending offer
+87118 [main] INFO  com.shop.main.ShopMain  - 3)Remove an item from the shop
+87118 [main] INFO  com.shop.main.ShopMain  - 4)view all payments
+87118 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+87119 [main] INFO  com.shop.main.ShopMain  - -----------------
+114204 [main] INFO  com.shop.main.ShopMain  - ....0)Back to Main Menu
+114205 [main] INFO  com.shop.main.ShopMain  - Invalid Choice... Please enter a proper choice.
+114205 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+114205 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+114205 [main] INFO  com.shop.main.ShopMain  - -----------------
+114205 [main] INFO  com.shop.main.ShopMain  - 1)Login
+114206 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+114206 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+114206 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+136696 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+136696 [main] INFO  com.shop.main.ShopMain  - Enter email:
+149846 [main] INFO  com.shop.main.ShopMain  - Enter password:
+151935 [main] INFO  com.shop.main.ShopMain  - ------------Login result---------
+151936 [main] INFO  com.shop.main.ShopMain  - Person LOGIN Success!
+151936 [main] INFO  com.shop.main.ShopMain  - User [id=9, email=123@abc.com, role=manager]
+151937 [main] INFO  com.shop.main.ShopMain  - ------------Manager MENU---------
+151937 [main] INFO  com.shop.main.ShopMain  - 1)Add employee accounts
+151940 [main] INFO  com.shop.main.ShopMain  - 2)Edit existing items
+151941 [main] INFO  com.shop.main.ShopMain  - 3)Fire employees
+151942 [main] INFO  com.shop.main.ShopMain  - 4)Send got fired email
+151943 [main] INFO  com.shop.main.ShopMain  - 5)View sales history of all offers
+151943 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+151943 [main] INFO  com.shop.main.ShopMain  - -----------------
+154546 [main] INFO  com.shop.main.ShopMain  - ....2)Edit existing items
+154584 [main] INFO  com.shop.main.ShopMain  - Please enter itemId: 
+163486 [main] INFO  com.shop.main.ShopMain  - Please enter itemName: 
+168802 [main] INFO  com.shop.main.ShopMain  - Please enter itemPrice: 
+171149 [main] INFO  com.shop.main.ShopMain  - Please enter itemPromotionalDiscount: 
+177247 [main] INFO  com.shop.main.ShopMain  - Please enter itemQuantity: 
+183856 [main] INFO  com.shop.main.ShopMain  - Please enter promotionStartDate MM/dd/yyyy: 
+190900 [main] INFO  com.shop.main.ShopMain  - Please enter itemPromotionEndDate MM/dd/yyyy: 
+196111 [main] ERROR com.shop.main.ShopMain  - ....ERROR: Internal error: ERROR: column "temname" of relation "items" does not exist
+  Position: 23
+196112 [main] INFO  com.shop.main.ShopMain  - ------------RETRY WITH VALID VALUES---------
+196112 [main] INFO  com.shop.main.ShopMain  - ------------Manager MENU---------
+196112 [main] INFO  com.shop.main.ShopMain  - 1)Add employee accounts
+196112 [main] INFO  com.shop.main.ShopMain  - 2)Edit existing items
+196112 [main] INFO  com.shop.main.ShopMain  - 3)Fire employees
+196112 [main] INFO  com.shop.main.ShopMain  - 4)Send got fired email
+196112 [main] INFO  com.shop.main.ShopMain  - 5)View sales history of all offers
+196112 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+196112 [main] INFO  com.shop.main.ShopMain  - -----------------
+0    [main] INFO  com.shop.main.ShopMain  - Shop Appplication Started.
+5    [main] INFO  com.shop.main.ShopMain  - Welcome to Teresa's Shop,  where every day is a happy day
+5    [main] INFO  com.shop.main.ShopMain  - ================================================
+5    [main] INFO  com.shop.main.ShopMain  - Teresa's Shop App V1.0
+5    [main] INFO  com.shop.main.ShopMain  - ================================================
+5    [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+5    [main] INFO  com.shop.main.ShopMain  - Shop MENU
+5    [main] INFO  com.shop.main.ShopMain  - -----------------
+5    [main] INFO  com.shop.main.ShopMain  - 1)Login
+6    [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+6    [main] INFO  com.shop.main.ShopMain  - 0)Exit
+6    [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+3271 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+3273 [main] INFO  com.shop.main.ShopMain  - Enter email:
+8920 [main] INFO  com.shop.main.ShopMain  - Enter password:
+11037 [main] INFO  com.shop.main.ShopMain  - ------------Login result---------
+11037 [main] INFO  com.shop.main.ShopMain  - Person LOGIN Success!
+11037 [main] INFO  com.shop.main.ShopMain  - User [id=11, email=teresa@gmail.com, role=employee]
+11037 [main] INFO  com.shop.main.ShopMain  - ------------EMPLOYEE MENU---------
+11037 [main] INFO  com.shop.main.ShopMain  - 1)Add Item
+11037 [main] INFO  com.shop.main.ShopMain  - 2)Accept or reject a pending offer
+11037 [main] INFO  com.shop.main.ShopMain  - 3)Remove an item from the shop
+11038 [main] INFO  com.shop.main.ShopMain  - 4)view all payments
+11038 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+11038 [main] INFO  com.shop.main.ShopMain  - -----------------
+36172 [main] INFO  com.shop.main.ShopMain  - ....0)Back to Main Menu
+36174 [main] INFO  com.shop.main.ShopMain  - Invalid Choice... Please enter a proper choice.
+36174 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+36174 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+36174 [main] INFO  com.shop.main.ShopMain  - -----------------
+36174 [main] INFO  com.shop.main.ShopMain  - 1)Login
+36175 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+36175 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+36175 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+44222 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+44223 [main] INFO  com.shop.main.ShopMain  - Enter email:
+65771 [main] INFO  com.shop.main.ShopMain  - Enter password:
+69581 [main] INFO  com.shop.main.ShopMain  - ------------Login result---------
+69582 [main] INFO  com.shop.main.ShopMain  - Person LOGIN Success!
+69583 [main] INFO  com.shop.main.ShopMain  - User [id=9, email=123@abc.com, role=manager]
+69583 [main] INFO  com.shop.main.ShopMain  - ------------Manager MENU---------
+69583 [main] INFO  com.shop.main.ShopMain  - 1)Add employee accounts
+69584 [main] INFO  com.shop.main.ShopMain  - 2)Edit existing items
+69584 [main] INFO  com.shop.main.ShopMain  - 3)Fire employees
+69584 [main] INFO  com.shop.main.ShopMain  - 4)Send got fired email
+69584 [main] INFO  com.shop.main.ShopMain  - 5)View sales history of all offers
+69585 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+69585 [main] INFO  com.shop.main.ShopMain  - -----------------
+78023 [main] INFO  com.shop.main.ShopMain  - ....2)Edit existing items
+78075 [main] INFO  com.shop.main.ShopMain  - Please enter itemId: 
+83904 [main] INFO  com.shop.main.ShopMain  - Please enter itemName: 
+87074 [main] INFO  com.shop.main.ShopMain  - Please enter itemPrice: 
+88772 [main] INFO  com.shop.main.ShopMain  - Please enter itemPromotionalDiscount: 
+90223 [main] INFO  com.shop.main.ShopMain  - Please enter itemQuantity: 
+91783 [main] INFO  com.shop.main.ShopMain  - Please enter promotionStartDate MM/dd/yyyy: 
+95485 [main] INFO  com.shop.main.ShopMain  - Please enter itemPromotionEndDate MM/dd/yyyy: 
+98754 [main] INFO  com.shop.main.ShopMain  - ------------ITEM UPDATED---------
+98754 [main] INFO  com.shop.main.ShopMain  - ------------Manager MENU---------
+98754 [main] INFO  com.shop.main.ShopMain  - 1)Add employee accounts
+98754 [main] INFO  com.shop.main.ShopMain  - 2)Edit existing items
+98754 [main] INFO  com.shop.main.ShopMain  - 3)Fire employees
+98754 [main] INFO  com.shop.main.ShopMain  - 4)Send got fired email
+98754 [main] INFO  com.shop.main.ShopMain  - 5)View sales history of all offers
+98755 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+98755 [main] INFO  com.shop.main.ShopMain  - -----------------
+0    [main] INFO  com.shop.main.ShopMain  - Shop Appplication Started.
+4    [main] INFO  com.shop.main.ShopMain  - Welcome to Teresa's Shop,  where every day is a happy day
+4    [main] INFO  com.shop.main.ShopMain  - ================================================
+4    [main] INFO  com.shop.main.ShopMain  - Teresa's Shop App V1.0
+5    [main] INFO  com.shop.main.ShopMain  - ================================================
+5    [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+5    [main] INFO  com.shop.main.ShopMain  - Shop MENU
+5    [main] INFO  com.shop.main.ShopMain  - -----------------
+5    [main] INFO  com.shop.main.ShopMain  - 1)Login
+5    [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+5    [main] INFO  com.shop.main.ShopMain  - 0)Exit
+5    [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+2148 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+2148 [main] INFO  com.shop.main.ShopMain  - Enter email:
+6752 [main] INFO  com.shop.main.ShopMain  - Enter password:
+12160 [main] INFO  com.shop.main.ShopMain  - User LOGIN FAILED!
+12160 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+12160 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+12160 [main] INFO  com.shop.main.ShopMain  - -----------------
+12160 [main] INFO  com.shop.main.ShopMain  - 1)Login
+12160 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+12161 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+12161 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+15999 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+16000 [main] INFO  com.shop.main.ShopMain  - Enter email:
+20106 [main] INFO  com.shop.main.ShopMain  - Enter password:
+21610 [main] INFO  com.shop.main.ShopMain  - ------------Login result---------
+21611 [main] INFO  com.shop.main.ShopMain  - Person LOGIN Success!
+21611 [main] INFO  com.shop.main.ShopMain  - User [id=9, email=123@abc.com, role=manager]
+21612 [main] INFO  com.shop.main.ShopMain  - ------------Manager MENU---------
+21612 [main] INFO  com.shop.main.ShopMain  - 1)Add employee accounts
+21612 [main] INFO  com.shop.main.ShopMain  - 2)Edit existing items
+21612 [main] INFO  com.shop.main.ShopMain  - 3)Fire employees
+21612 [main] INFO  com.shop.main.ShopMain  - 4)Send got fired email
+21612 [main] INFO  com.shop.main.ShopMain  - 5)View sales history of all offers
+21612 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+21613 [main] INFO  com.shop.main.ShopMain  - -----------------
+24416 [main] INFO  com.shop.main.ShopMain  - ....2)Edit existing items
+24458 [main] INFO  com.shop.main.ShopMain  - Please enter itemId: 
+27179 [main] INFO  com.shop.main.ShopMain  - Please enter itemName: 
+0    [main] INFO  com.shop.main.ShopMain  - Shop Appplication Started.
+5    [main] INFO  com.shop.main.ShopMain  - Welcome to Teresa's Shop,  where every day is a happy day
+5    [main] INFO  com.shop.main.ShopMain  - ================================================
+5    [main] INFO  com.shop.main.ShopMain  - Teresa's Shop App V1.0
+5    [main] INFO  com.shop.main.ShopMain  - ================================================
+5    [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+6    [main] INFO  com.shop.main.ShopMain  - Shop MENU
+6    [main] INFO  com.shop.main.ShopMain  - -----------------
+6    [main] INFO  com.shop.main.ShopMain  - 1)Login
+6    [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+6    [main] INFO  com.shop.main.ShopMain  - 0)Exit
+6    [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+2668 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+2668 [main] INFO  com.shop.main.ShopMain  - Enter email:
+10118 [main] INFO  com.shop.main.ShopMain  - Enter password:
+13092 [main] INFO  com.shop.main.ShopMain  - ------------Login result---------
+13092 [main] INFO  com.shop.main.ShopMain  - Person LOGIN Success!
+13093 [main] INFO  com.shop.main.ShopMain  - User [id=9, email=123@abc.com, role=manager]
+13093 [main] INFO  com.shop.main.ShopMain  - ------------Manager MENU---------
+13093 [main] INFO  com.shop.main.ShopMain  - 1)Add employee accounts
+13093 [main] INFO  com.shop.main.ShopMain  - 2)Edit existing items
+13093 [main] INFO  com.shop.main.ShopMain  - 3)Fire employees
+13093 [main] INFO  com.shop.main.ShopMain  - 4)Send got fired email
+13093 [main] INFO  com.shop.main.ShopMain  - 5)View sales history of all offers
+13093 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+13093 [main] INFO  com.shop.main.ShopMain  - -----------------
+16471 [main] INFO  com.shop.main.ShopMain  - ....2)Edit existing items
+16588 [main] INFO  com.shop.main.ShopMain  - Please enter itemId: 
+19198 [main] INFO  com.shop.main.ShopMain  - ------------No item found for itemId: 33
+19199 [main] INFO  com.shop.main.ShopMain  - ------------Manager MENU---------
+19200 [main] INFO  com.shop.main.ShopMain  - 1)Add employee accounts
+19200 [main] INFO  com.shop.main.ShopMain  - 2)Edit existing items
+19200 [main] INFO  com.shop.main.ShopMain  - 3)Fire employees
+19200 [main] INFO  com.shop.main.ShopMain  - 4)Send got fired email
+19200 [main] INFO  com.shop.main.ShopMain  - 5)View sales history of all offers
+19200 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+19200 [main] INFO  com.shop.main.ShopMain  - -----------------

@@ -1,20 +1,18 @@
 package com.shop.main;
 
-import java.security.Security;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Properties;
 import java.util.Scanner;
 
-import java.util.*;  
-import javax.mail.*;  
-import javax.mail.internet.*;  
-
-import javax.mail.*;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.util.Properties;
 
 import org.apache.log4j.Logger;
 
@@ -33,9 +31,6 @@ import com.shop.model.Payment;
 import com.shop.model.User;
 import com.shop.util.DataValidations;
 import com.shop.util.WelcomeLetterUtil;
-import com.sun.mail.smtp.SMTPTransport;
-
-
 
 //Run the program with argument: -Dlog4j.configuration=log4j.properties
 public class ShopMain {
@@ -482,11 +477,6 @@ public class ShopMain {
 
 	}
 
-	private static void updateItemPricebyId() {
-		// TODO Auto-generated method stub
-
-	}
-
 	private static boolean printAvailableItems() {
 		ItemDAO itemDAO = new ItemDAOImpl();
 		try {
@@ -494,7 +484,6 @@ public class ShopMain {
 			if (list == null || list.isEmpty()) {
 				System.out.println("----NO Items are Available.");
 				return false;
-
 			}
 			System.out.println("----Available Items: ");
 			for (Item item : list) {
@@ -576,7 +565,7 @@ public class ShopMain {
 				addEmployeeAccount();
 				break;
 			case 2:
-				log.info("....2)edit existing items");
+				log.info("....2)Edit existing items");
 				editItems();
 				break;
 			case 3:
@@ -586,7 +575,7 @@ public class ShopMain {
 				log.info("....4)Send got fired email");
 				sendEmail();
 				break;
-			
+
 			case 5:
 				log.info("....5)view sales history of all offers");
 				viewSalesHistory();
@@ -604,61 +593,97 @@ public class ShopMain {
 	}
 
 	private static void editItems() {
-		// TODO Auto-generated method stub
-		
-	}
+		boolean available = printAvailableItems();
+		if (!available) {
+			return;
+		}
 
-	
+		int itemId = getInputInt("itemId");
+
+		ItemDAO dao = new ItemDAOImpl();
+		Item itemFromDB = null;
+		try {
+			itemFromDB = dao.getItemById(itemId);
+			if(itemFromDB == null) {
+				log.info("------------No item found for itemId: " + itemId);
+				return;
+			}
+		} catch (BusinessException e) {
+			log.error("....ERROR: " + e.getMessage());
+			return;
+		}
+
+		String itemName = getInputString("itemName");
+		double itemPrice = getInputDouble("itemPrice");
+		double itemPromotionalDiscount = getInputDouble("itemPromotionalDiscount");
+		int itemQuantity = getInputInt("itemQuantity");
+		Date promotionStartDate = getInputDate("promotionStartDate");
+		Date itemPromotionEndDate = getInputDate("itemPromotionEndDate");
+
+		itemFromDB.setItemName(itemName);
+		itemFromDB.setItemPrice(itemPrice);
+		itemFromDB.setItemPromotionalDiscount(itemPromotionalDiscount);
+		itemFromDB.setItemQuantity(itemQuantity);
+		itemFromDB.setPromotionStartDate(promotionStartDate);
+		itemFromDB.setItemPromotionEndDate(itemPromotionEndDate);
+
+		ItemDAO itemDAO = new ItemDAOImpl();
+		try {
+			int count = itemDAO.updateItem(itemFromDB);
+			if (count == 1) {
+				log.info("------------ITEM UPDATED---------");
+			} else {
+				log.info("------------FAILED to update Item.---------");
+			}
+		} catch (BusinessException e) {
+			log.error("....ERROR: " + e.getMessage());
+			log.info("------------RETRY WITH VALID VALUES---------");
+		}
+
+	}
 
 	private static void viewSalesHistory() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	private static void sendEmail() {
-	
 
+		final String username = "tfitzge134@gmail.com";
+		final String password = "Foxy2019";
 
-				        final String username = "tfitzge134@gmail.com";
-				        final String password = "Foxy2019";
+		Properties prop = new Properties();
+		prop.put("mail.smtp.host", "smtp.gmail.com");
+		prop.put("mail.smtp.port", "465");
+		prop.put("mail.smtp.auth", "true");
+		prop.put("mail.smtp.socketFactory.port", "465");
+		prop.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 
-				        Properties prop = new Properties();
-				        prop.put("mail.smtp.host", "smtp.gmail.com");
-				        prop.put("mail.smtp.port", "465");
-				        prop.put("mail.smtp.auth", "true");
-				        prop.put("mail.smtp.socketFactory.port", "465");
-				        prop.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-				        
-				        Session session = Session.getInstance(prop,
-				                new javax.mail.Authenticator() {
-				                    protected PasswordAuthentication getPasswordAuthentication() {
-				                        return new PasswordAuthentication(username, password);
-				                    }
-				                });
+		Session session = Session.getInstance(prop, new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(username, password);
+			}
+		});
 
-				        try {
+		try {
 
-				            Message message = new MimeMessage(session);
-				            message.setFrom(new InternetAddress("tfitzge134@gmail.com"));
-				            message.setRecipients(
-				                    Message.RecipientType.TO,
-				                    InternetAddress.parse("gfitzgerald@gmail.com, tfitzge134@yahoo.com")
-				            );
-				            message.setSubject("YOU ARE FIRED");
-				            //we need add the customer name.
-				            message.setText("Dear Employee,"
-				                    + "\n\n we have decided that your services are not longer needed."+
-				            		"\n\n we wish you good the best luck in your proffesional journey");
+			Message message = new MimeMessage(session);
+			message.setFrom(new InternetAddress("tfitzge134@gmail.com"));
+			message.setRecipients(Message.RecipientType.TO,
+					InternetAddress.parse("gfitzgerald@gmail.com, tfitzge134@yahoo.com"));
+			message.setSubject("YOU ARE FIRED");
+			// we need add the customer name.
+			message.setText("Dear Employee," + "\n\n we have decided that your services are not longer needed."
+					+ "\n\n we wish you good the best luck in your proffesional journey");
 
-				            Transport.send(message);
+			Transport.send(message);
 
-				            System.out.println(" Your email was sent");
+			System.out.println(" Your email was sent");
 
-				        } catch (MessagingException e) {
-				            e.printStackTrace();
-				        }
-				    }
-
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+	}
 
 	private static void fireEmployee() {
 		String email = getInputString("Employee Email");
