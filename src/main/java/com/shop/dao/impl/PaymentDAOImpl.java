@@ -72,30 +72,4 @@ public class PaymentDAOImpl implements PaymentDAO {
 	}
 
 }
-/*
- * 
- */
 
-//	@Override
-//	public List<Payment> viewPayments() throws BusinessException {
-////		List<Payment> PaymentList = new ArrayList<>();
-////		try (Connection connection = PostgresConnection.openConnection()) {
-////			String sql = "Select * from shop.payment";
-////			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-////			ResultSet resultSet = preparedStatement.executeQuery();
-////			while (resultSet.next()) {
-////				Payment Payment1 = new Payment();
-////				Payment1.setItemoffer_id(resultSet.getInt("itemoffer_id"));
-////				Payment1.setAmount(resultSet.getDouble("amount"));
-////				Payment1.setPaid_date(resultSet.getDate(sql));
-////
-////
-////				PaymentList.add(Payment1);
-////			}
-////			return PaymentList ;
-////		} catch (Exception e) {
-////			e.printStackTrace();
-////			throw new BusinessException("Internal error: " + e.getMessage());
-////		}
-////	}
-//	}

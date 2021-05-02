@@ -3,7 +3,17 @@ package com.shop.main;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Properties;
 import java.util.Scanner;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.swing.JFrame;
 
 import org.apache.log4j.Logger;
 
@@ -21,6 +31,7 @@ import com.shop.model.ItemOffer;
 import com.shop.model.Payment;
 import com.shop.model.User;
 import com.shop.util.DataValidations;
+import com.shop.util.WelcomeLetterUtil;
 
 //Run the program with argument: -Dlog4j.configuration=log4j.properties
 public class ShopMain {
@@ -233,11 +244,40 @@ public class ShopMain {
 	private static void addItem() {
 		String itemName = getInputString("itemName");
 		double itemPrice = getInputDouble("itemPrice");
+		if (!DataValidations.isValidPrice(itemPrice)) {
+			log.info("Invalid price.");
+			return;
+		}
 		double itemPromotionalDiscount = getInputDouble("itemPromotionalDiscount");
-		int itemQuantity = getInputInt("itemQuantity");
-		Date promotionStartDate = getInputDate("promotionStartDate");
-		Date itemPromotionEndDate = getInputDate("itemPromotionEndDate");
+		if (!DataValidations.isValidDiscount(itemPromotionalDiscount)) {
+			log.info("Invalid itemPromotionalDiscount.");
+			return;
+		}
+		if (itemPromotionalDiscount >= itemPrice) {
+			log.info("Invalid itemPromotionalDiscount. itemPromotionalDiscount should be lesser than the item price.");
+			return;
+		}
 
+		int itemQuantity = getInputInt("itemQuantity");
+		if (!DataValidations.isValidItemQuantity(itemQuantity)) {
+			log.info("Invalid itemQuantity.");
+			return;
+		}
+		Date promotionStartDate = getInputDate("promotionStartDate");
+		if (!DataValidations.isFutureDate(promotionStartDate)) {
+			log.info("Invalid promotionStartDate. Must be a future date.");
+			return;
+		}
+		Date itemPromotionEndDate = getInputDate("itemPromotionEndDate");
+		if (!DataValidations.isFutureDate(itemPromotionEndDate)) {
+			log.info("Invalid itemPromotionEndDate. Must be a future date.");
+			return;
+		}
+
+		if (itemPromotionEndDate.before(promotionStartDate)) {
+			log.info("Invalid EndDate. EndDate Must be after start date.");
+			return;
+		}
 		Item item = new Item();
 		item.setItemName(itemName);
 		item.setItemPrice(itemPrice);
@@ -322,7 +362,7 @@ public class ShopMain {
 			log.info("1)View available items");
 			log.info("....2)Make an offer for an item");
 			log.info("....3)View my purchases");
-			log.info("....4)Make payments an item");
+			log.info("....4)Make payments on an item");
 			log.info("....5)View payments for item purchase");
 			log.info("0)Back to Main Menu");
 			log.info("-----------------");
@@ -354,10 +394,6 @@ public class ShopMain {
 				log.info("....5)View payments for item purchase");
 				printPayments();
 				break;
-			case 6:
-				log.info("....6) View documents");
-				latePaymentLetter();
-				break;
 
 			case 0:
 				log.info("....0)Back to Main Menu");
@@ -379,11 +415,6 @@ public class ShopMain {
 			log.error("....ERROR: " + e.getMessage());
 			log.info("------------RETRY WITH VALID VALUES---------");
 		}
-
-	}
-
-	private static void latePaymentLetter() {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -428,11 +459,11 @@ public class ShopMain {
 				return;
 			}
 			System.out.println("----Available ItemOffers: ");
-			for(Payment p: list) {
+			for (Payment p : list) {
 				log.info(p);
 			}
 			log.info("---x----");
-			
+
 		} catch (BusinessException e) {
 			log.error("....ERROR: " + e.getMessage());
 			log.info("------------RETRY WITH VALID VALUES---------");
@@ -467,11 +498,6 @@ public class ShopMain {
 
 	}
 
-	private static void updateItemPricebyId() {
-		// TODO Auto-generated method stub
-
-	}
-
 	private static boolean printAvailableItems() {
 		ItemDAO itemDAO = new ItemDAOImpl();
 		try {
@@ -479,7 +505,6 @@ public class ShopMain {
 			if (list == null || list.isEmpty()) {
 				System.out.println("----NO Items are Available.");
 				return false;
-
 			}
 			System.out.println("----Available Items: ");
 			for (Item item : list) {
@@ -489,7 +514,7 @@ public class ShopMain {
 			return true;
 		} catch (BusinessException e) {
 			e.printStackTrace();
-			System.out.println("ERROR: " + e.getMessage());
+			log.error("ERROR: " + e.getMessage());
 			return false;
 		}
 
@@ -528,13 +553,17 @@ public class ShopMain {
 		try {
 			boolean success = userDAO.addUser(user);
 			if (success) {
-				System.out.println("User added successfully.");
+				if ("customer".equalsIgnoreCase(role)) {
+					log.info(WelcomeLetterUtil.getWelcomeMessage());
+				} else {
+					log.info("Signup Success!");
+				}
 			} else {
-				System.out.println("Add User FAILED.");
+				log.info("Signup FAILED. Please try again later.");
 			}
 		} catch (BusinessException e) {
 			e.printStackTrace();
-			System.out.println("ERROR: " + e.getMessage());
+			log.error("ERROR: " + e.getMessage());
 		}
 
 	}
@@ -544,9 +573,10 @@ public class ShopMain {
 		do {
 			log.info("------------Manager MENU---------");
 			log.info("1)Add employee accounts");
-			log.info("2)edit existing items");
-			log.info("3.fire employees");
-			log.info("4.view sales history of all offers");
+			log.info("2)View items");
+			log.info("3)Edit existing items");
+			log.info("4)Fire employee an send email notification");
+			log.info("5)View sales history of all offers");
 			log.info("0)Back to Main Menu");
 			log.info("-----------------");
 
@@ -560,16 +590,19 @@ public class ShopMain {
 				addEmployeeAccount();
 				break;
 			case 2:
-				log.info("....2)edit existing items");
-				viewMyAccounts();
+				log.info("2)View items");
+				printAvailableItems();
 				break;
 			case 3:
-				log.info("....2)fire employees");
-				fireEmployee();
+				log.info("....3)Edit existing items");
+				editItems();
 				break;
 			case 4:
-				log.info("....2)view sales history of all offers");
-				makePayments();
+				log.info("....4)Fire employees");
+				fireEmployee();
+			case 5:
+				log.info("....5)view sales history of all offers");
+				viewSalesHistory();
 				break;
 
 			case 0:
@@ -583,20 +616,157 @@ public class ShopMain {
 		} while (ch != 0);
 	}
 
-	private static void fireEmployee() {
+	private static void editItems() {
+		boolean available = printAvailableItems();
+		if (!available) {
+			return;
+		}
+
+		int itemId = getInputInt("itemId");
+
+		ItemDAO dao = new ItemDAOImpl();
+		Item itemFromDB = null;
+		try {
+			itemFromDB = dao.getItemById(itemId);
+			if (itemFromDB == null) {
+				log.info("------------No item found for itemId: " + itemId);
+				return;
+			}
+		} catch (BusinessException e) {
+			log.error("....ERROR: " + e.getMessage());
+			return;
+		}
+
+		String itemName = getInputString("itemName");
+		double itemPrice = getInputDouble("itemPrice");
+		if (!DataValidations.isValidPrice(itemPrice)) {
+			log.info("Invalid price.");
+			return;
+		}
+		double itemPromotionalDiscount = getInputDouble("itemPromotionalDiscount");
+		if (!DataValidations.isValidDiscount(itemPromotionalDiscount)) {
+			log.info("Invalid itemPromotionalDiscount.");
+			return;
+		}
+		if (itemPromotionalDiscount >= itemPrice) {
+			log.info("Invalid itemPromotionalDiscount. itemPromotionalDiscount should be lesser than the item price.");
+			return;
+		}
+
+		int itemQuantity = getInputInt("itemQuantity");
+		if (!DataValidations.isValidItemQuantity(itemQuantity)) {
+			log.info("Invalid itemQuantity.");
+			return;
+		}
+		Date promotionStartDate = getInputDate("promotionStartDate");
+		if (!DataValidations.isFutureDate(promotionStartDate)) {
+			log.info("Invalid promotionStartDate. Must be a future date.");
+			return;
+		}
+		Date itemPromotionEndDate = getInputDate("itemPromotionEndDate");
+		if (!DataValidations.isFutureDate(itemPromotionEndDate)) {
+			log.info("Invalid itemPromotionEndDate. Must be a future date.");
+			return;
+		}
+
+		if (itemPromotionEndDate.before(promotionStartDate)) {
+			log.info("Invalid EndDate. EndDate Must be after start date.");
+			return;
+		}
+
+		itemFromDB.setItemName(itemName);
+		itemFromDB.setItemPrice(itemPrice);
+		itemFromDB.setItemPromotionalDiscount(itemPromotionalDiscount);
+		itemFromDB.setItemQuantity(itemQuantity);
+		itemFromDB.setPromotionStartDate(promotionStartDate);
+		itemFromDB.setItemPromotionEndDate(itemPromotionEndDate);
+
+		ItemDAO itemDAO = new ItemDAOImpl();
+		try {
+			int count = itemDAO.updateItem(itemFromDB);
+			if (count == 1) {
+				log.info("------------ITEM UPDATED---------");
+			} else {
+				log.info("------------FAILED to update Item.---------");
+			}
+		} catch (BusinessException e) {
+			log.error("....ERROR: " + e.getMessage());
+			log.info("------------RETRY WITH VALID VALUES---------");
+		}
+
+	}
+
+	private static void viewSalesHistory() {
 		// TODO Auto-generated method stub
 
 	}
 
-	private static void viewMyAccounts() {
-		ItemDAO itemdao = new ItemDAOImpl();
-		System.out.println("View my items purchased");
-		String purchases = scanner.nextLine();
-		System.out.println("Enter a ten digit item number");
-		int itemid = scanner.nextInt();
-		if (!DataValidations.isValidItemNumber(itemid)) {
-			System.out.println("invalid item number");
-			return;
+	private static void sendEmail(String toEmail) {
+
+		final String username = "shopabxy2021@gmail.com";
+		final String password = getInputString("Server Password for " + username + ": ");
+
+		Properties prop = new Properties();
+		prop.put("mail.smtp.host", "smtp.gmail.com");
+		prop.put("mail.smtp.port", "465");
+		prop.put("mail.smtp.auth", "true");
+		prop.put("mail.smtp.socketFactory.port", "465");
+		prop.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+
+		Session session = Session.getInstance(prop, new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(username, password);
+			}
+		});
+
+		try {
+
+			Message message = new MimeMessage(session);
+			message.setFrom(new InternetAddress("tfitzge134@gmail.com"));
+			message.setRecipients(Message.RecipientType.TO,
+
+					InternetAddress.parse(toEmail));
+			message.setSubject("YOU ARE FIRED");
+			// we need add the customer name.
+			message.setText("Dear Employee," + "\n\n we have decided that your services are not longer needed."
+					+ "\n\n we wish you good the best luck in your proffesional journey");
+
+			Transport.send(message);
+
+			System.out.println(" Your email was sent");
+
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static void fireEmployee() {
+		String email = getInputString("Employee Email");
+		UserDAO userDao = new UserDAOImpl();
+		try {
+			User user = userDao.getByEmail(email);
+			if (user == null) {
+				log.info("Can not find User with email.");
+				return;
+			}
+			if (user.getRole() == null) {
+				log.info("Can not delete User with NO role.");
+				return;
+			}
+			if (user.getRole().equalsIgnoreCase("employee")) {
+				boolean success = userDao.deleteById(user.getId());
+				if (success) {
+					log.info("----EMPLOYEE record DELETED----");
+					sendEmail(email);
+				} else {
+					log.info("---COULD NOT DELETE EMPLOYEE---");
+				}
+			} else {
+				log.info("Can not delete User with role: " + user.getRole());
+			}
+		} catch (BusinessException e) {
+			e.printStackTrace();
+			log.error("ERROR: " + e.getMessage());
 		}
 
 	}
@@ -619,7 +789,7 @@ public class ShopMain {
 			}
 		} catch (BusinessException e1) {
 			e1.printStackTrace();
-			System.out.println("ERROR: " + e1.getMessage());
+			log.error("ERROR: " + e1.getMessage());
 			return;
 		}
 
@@ -640,7 +810,7 @@ public class ShopMain {
 			}
 		} catch (BusinessException e) {
 			e.printStackTrace();
-			System.out.println("ERROR: " + e.getMessage());
+			log.error("ERROR: " + e.getMessage());
 		}
 
 	}

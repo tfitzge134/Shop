@@ -66,15 +66,29 @@ public class ItemDAOImpl implements ItemDAO {
 	}
 
 	@Override
-	public int updateItemPricebyId(int itemid) throws BusinessException {
+	public Item getItemById(int itemid) throws BusinessException {
+		try (Connection connection = PostgresConnection.openConnection()) {
+			String sql = "Select * from shop.items where itemid = ?";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, itemid);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			if (resultSet.next()) {
+				Item item1 = new Item();
+				item1.setItemid(resultSet.getInt("itemid"));
+				item1.setItemName(resultSet.getString("itemname"));
+				item1.setItemPrice(resultSet.getDouble("itemprice"));
+				item1.setItemPromotionalDiscount(resultSet.getDouble("item_promotion_discount"));
+				item1.setItemQuantity(resultSet.getInt("item_quantity"));
+				item1.setItemPromotionEndDate(resultSet.getDate("promotion_end_date"));
+				item1.setPromotionStartDate(resultSet.getDate("promotion_start_date"));
+				return item1;
+			}
+			return null;
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new BusinessException("Internal error: " + e.getMessage());
+		}
 
-		return 0;
-	}
-
-	@Override
-	public int getAvailableItemsbyId(int itemid) throws BusinessException {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 
 	@Override
@@ -91,6 +105,32 @@ public class ItemDAOImpl implements ItemDAO {
 			e.printStackTrace();
 			throw new BusinessException("Internal error: " + e.getMessage());
 		}
+	}
+
+	@Override
+	public int updateItem(Item item) throws BusinessException {
+		try (Connection connection = PostgresConnection.openConnection()) {
+			String sql = "UPDATE shop.items SET itemName =?, " + " itemPrice =?,"
+					+ " item_promotion_discount=?, item_quantity =?,"
+					+ " promotion_start_date =?, promotion_end_date =? " 
+					+ " WHERE itemid = ?";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			int index = 1;
+			preparedStatement.setString(index++, item.getItemName());
+			preparedStatement.setDouble(index++, item.getItemPrice());
+			preparedStatement.setDouble(index++, item.getItemPromotionalDiscount());
+			preparedStatement.setInt(index++, item.getItemQuantity());
+			preparedStatement.setDate(index++, item.getPromotionStartDate());
+			preparedStatement.setDate(index++, item.getItemPromotionEndDate());
+			preparedStatement.setInt(index++, item.getItemid());
+			int count = preparedStatement.executeUpdate();
+			return count;
+
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+			throw new BusinessException("Internal error: " + e.getMessage());
+		}
+
 	}
 
 }

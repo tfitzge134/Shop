@@ -15,17 +15,17 @@ public class PostgresConnection {
 	private PostgresConnection() {
 
 	}
-
-	public static Connection getConnection() throws ClassNotFoundException, SQLException {
-
-		// step 2 open connection
-		if (connection == null) {
-			return openConnection();
-		} else {
-			return connection;
-		}
-
-	}
+//
+//	public static Connection getConnection() throws ClassNotFoundException, SQLException {
+//
+//		// step 2 open connection
+//		if (connection == null) {
+//			return openConnection();
+//		} else {
+//			return connection;
+//		}
+//
+//	}
 
 	public static Connection openConnection() throws ClassNotFoundException, SQLException {
 		Class.forName("org.postgresql.Driver");
