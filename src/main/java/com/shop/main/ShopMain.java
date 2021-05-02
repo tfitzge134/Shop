@@ -132,7 +132,7 @@ public class ShopMain {
 			log.info("1)Add Item");
 			log.info("2)Accept or reject a pending offer");
 			log.info("3)Remove an item from the shop");
-			log.info("4)view all payments");
+//			log.info("4)View all payments");
 			// remove an item from the shop
 			log.info("0)Back to Main Menu");
 			log.info("-----------------");
@@ -153,6 +153,10 @@ public class ShopMain {
 				log.info("3)Remove an item from the shop");
 				removeItemFromShop();
 				break;
+//			case 4:
+//				log.info("4)View all payments");
+//				removeItemFromShop();
+//				break;
 			case 0:
 				log.info("....0)Back to Main Menu");
 
@@ -363,7 +367,7 @@ public class ShopMain {
 			log.info("....2)Make an offer for an item");
 			log.info("....3)View my purchases");
 			log.info("....4)Make payments on an item");
-			log.info("....5)View payments for item purchase");
+//			log.info("....5)View payments for item purchase");
 			log.info("0)Back to Main Menu");
 			log.info("-----------------");
 
@@ -418,7 +422,30 @@ public class ShopMain {
 
 	}
 
+	private static boolean printMyAcceptedOffers() {
+		ItemOfferDAO dao = new ItemOfferDAOImpl();
+		try {
+			List<ItemOffer> list = dao.getAcceptedItemOffersByCustomerId(currentUser.getId());
+			if (list == null || list.isEmpty()) {
+				System.out.println("----NO Accepted IemOffers found.");
+				return false;
+			}
+			printItemOffers(list);
+			return true;
+		} catch (BusinessException e) {
+			log.error("....ERROR: " + e.getMessage());
+			log.info("------------RETRY WITH VALID VALUES---------");
+			return false;
+		}
+
+	}
+
 	private static void makeOfferForItem() {
+
+		boolean available = printAvailableItems();
+		if (!available) {
+			return;
+		}
 
 		int item_id = getInputInt("item_id");
 		int customer_id = currentUser.getId();
@@ -472,7 +499,10 @@ public class ShopMain {
 
 	private static void makePayments() {
 
-		printMyPurchases();
+		boolean available = printMyAcceptedOffers();
+		if (!available) {
+			return;
+		}
 		log.info("------------x---------");
 
 		int itemoffer_id = getInputInt("itemoffer_id");
@@ -576,7 +606,7 @@ public class ShopMain {
 			log.info("2)View items");
 			log.info("3)Edit existing items");
 			log.info("4)Fire employee an send email notification");
-			log.info("5)View sales history of all offers");
+//			log.info("5)View sales history of all offers");
 			log.info("0)Back to Main Menu");
 			log.info("-----------------");
 
@@ -594,16 +624,17 @@ public class ShopMain {
 				printAvailableItems();
 				break;
 			case 3:
-				log.info("....3)Edit existing items");
+				log.info("3)Edit existing items");
 				editItems();
 				break;
 			case 4:
-				log.info("....4)Fire employees");
+				log.info("4)Fire employee an send email notification");
 				fireEmployee();
-			case 5:
-				log.info("....5)view sales history of all offers");
-				viewSalesHistory();
 				break;
+//			case 5:
+//				log.info("5)view sales history of all offers");
+//				viewSalesHistory();
+//				break;
 
 			case 0:
 				log.info("....0)Back to Main Menu");
