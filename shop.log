@@ -8321,3 +8321,422 @@ If you have the time next week, maybe we can visit you in your office.
 184476 [main] INFO  com.shop.main.ShopMain  - 5)View sales history of all offers
 184476 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
 184476 [main] INFO  com.shop.main.ShopMain  - -----------------
+0    [main] INFO  com.shop.main.ShopMain  - Shop Appplication Started.
+4    [main] INFO  com.shop.main.ShopMain  - Welcome to Teresa's Shop,  where every day is a happy day
+4    [main] INFO  com.shop.main.ShopMain  - ================================================
+4    [main] INFO  com.shop.main.ShopMain  - Teresa's Shop App V1.0
+5    [main] INFO  com.shop.main.ShopMain  - ================================================
+5    [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+5    [main] INFO  com.shop.main.ShopMain  - Shop MENU
+5    [main] INFO  com.shop.main.ShopMain  - -----------------
+5    [main] INFO  com.shop.main.ShopMain  - 1)Login
+5    [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+5    [main] INFO  com.shop.main.ShopMain  - 0)Exit
+5    [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+8402 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+8404 [main] INFO  com.shop.main.ShopMain  - Enter email:
+17067 [main] INFO  com.shop.main.ShopMain  - Enter password:
+19661 [main] INFO  com.shop.main.ShopMain  - User LOGIN FAILED!
+19662 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+19662 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+19662 [main] INFO  com.shop.main.ShopMain  - -----------------
+19662 [main] INFO  com.shop.main.ShopMain  - 1)Login
+19662 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+19662 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+19662 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+37742 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+37743 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+37743 [main] INFO  com.shop.main.ShopMain  - -----------------
+37743 [main] INFO  com.shop.main.ShopMain  - 1)Login
+37743 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+37743 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+37744 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+52394 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+52394 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+52394 [main] INFO  com.shop.main.ShopMain  - -----------------
+52394 [main] INFO  com.shop.main.ShopMain  - 1)Login
+52394 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+52394 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+52394 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+82859 [main] INFO  com.shop.main.ShopMain  - Please enter password: 
+85688 [main] INFO  com.shop.main.ShopMain  - Please enter role: 
+90428 [main] INFO  com.shop.main.ShopMain  - Welcome, Customer!
+
+
+Thank you for choosing Teresa'Orchid Store.
+We are honored to have you as 
+our new customer, and it is our pleasure to provide 
+you with quality orchids.
+
+Our orchids are guaranteed to be of excellent quality and 
+all at very affordable prices.
+We make sure you get nothing but the best from our store.
+
+Being the newest addition to the Teresa' shop family,
+we will be giving you a welcome treat. For your first batch of orders,
+you get 10% off on the total bill. 
+It is our way of letting you know that we appreciate doing business with you.
+
+If you have the time next week, maybe we can visit you in your office.
+ We want to know more about your printing needs so that we can offer you something most suited for your type of business. We will just give you a call, or you can also contact us at 4567890 during weekdays from 8:00-5:00 p.m.
+ Once again, thank you and looking forward to meeting you soon.
+
+90428 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+90429 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+90429 [main] INFO  com.shop.main.ShopMain  - -----------------
+90429 [main] INFO  com.shop.main.ShopMain  - 1)Login
+90429 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+90429 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+90429 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+132471 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+132473 [main] INFO  com.shop.main.ShopMain  - Enter email:
+151220 [main] INFO  com.shop.main.ShopMain  - Enter password:
+153851 [main] INFO  com.shop.main.ShopMain  - ------------Login result---------
+153851 [main] INFO  com.shop.main.ShopMain  - Person LOGIN Success!
+153851 [main] INFO  com.shop.main.ShopMain  - User [id=9, email=123@abc.com, role=manager]
+153852 [main] INFO  com.shop.main.ShopMain  - ------------Manager MENU---------
+153852 [main] INFO  com.shop.main.ShopMain  - 1)Add employee accounts
+153852 [main] INFO  com.shop.main.ShopMain  - 2)View items
+153852 [main] INFO  com.shop.main.ShopMain  - 3)Edit existing items
+153852 [main] INFO  com.shop.main.ShopMain  - 4)Fire employees
+153852 [main] INFO  com.shop.main.ShopMain  - 5)View sales history of all offers
+153853 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+153853 [main] INFO  com.shop.main.ShopMain  - -----------------
+170713 [main] INFO  com.shop.main.ShopMain  - ....4)Fire employees
+170715 [main] INFO  com.shop.main.ShopMain  - Please enter Employee Email: 
+182009 [main] INFO  com.shop.main.ShopMain  - Can not find User with email.
+182011 [main] INFO  com.shop.main.ShopMain  - ....5)view sales history of all offers
+182011 [main] INFO  com.shop.main.ShopMain  - ------------Manager MENU---------
+182011 [main] INFO  com.shop.main.ShopMain  - 1)Add employee accounts
+182011 [main] INFO  com.shop.main.ShopMain  - 2)View items
+182011 [main] INFO  com.shop.main.ShopMain  - 3)Edit existing items
+182012 [main] INFO  com.shop.main.ShopMain  - 4)Fire employees
+182012 [main] INFO  com.shop.main.ShopMain  - 5)View sales history of all offers
+182012 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+182012 [main] INFO  com.shop.main.ShopMain  - -----------------
+193599 [main] INFO  com.shop.main.ShopMain  - ....4)Fire employees
+193600 [main] INFO  com.shop.main.ShopMain  - Please enter Employee Email: 
+203404 [main] INFO  com.shop.main.ShopMain  - ----EMPLOYEE record DELETED----
+203404 [main] INFO  com.shop.main.ShopMain  - Please enter Server Password for shopabxy2021@gmail.com: : 
+223468 [main] INFO  com.shop.main.ShopMain  - ....5)view sales history of all offers
+223469 [main] INFO  com.shop.main.ShopMain  - ------------Manager MENU---------
+223469 [main] INFO  com.shop.main.ShopMain  - 1)Add employee accounts
+223470 [main] INFO  com.shop.main.ShopMain  - 2)View items
+223470 [main] INFO  com.shop.main.ShopMain  - 3)Edit existing items
+223470 [main] INFO  com.shop.main.ShopMain  - 4)Fire employees
+223471 [main] INFO  com.shop.main.ShopMain  - 5)View sales history of all offers
+223471 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+223471 [main] INFO  com.shop.main.ShopMain  - -----------------
+0    [main] INFO  com.shop.main.ShopMain  - Shop Appplication Started.
+5    [main] INFO  com.shop.main.ShopMain  - Welcome to Teresa's Shop,  where every day is a happy day
+5    [main] INFO  com.shop.main.ShopMain  - ================================================
+5    [main] INFO  com.shop.main.ShopMain  - Teresa's Shop App V1.0
+5    [main] INFO  com.shop.main.ShopMain  - ================================================
+6    [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+6    [main] INFO  com.shop.main.ShopMain  - Shop MENU
+6    [main] INFO  com.shop.main.ShopMain  - -----------------
+6    [main] INFO  com.shop.main.ShopMain  - 1)Login
+6    [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+6    [main] INFO  com.shop.main.ShopMain  - 0)Exit
+6    [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+4094 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+4094 [main] INFO  com.shop.main.ShopMain  - Enter email:
+14731 [main] INFO  com.shop.main.ShopMain  - Enter password:
+16915 [main] INFO  com.shop.main.ShopMain  - User LOGIN FAILED!
+16915 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+16915 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+16916 [main] INFO  com.shop.main.ShopMain  - -----------------
+16916 [main] INFO  com.shop.main.ShopMain  - 1)Login
+16916 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+16916 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+16916 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+29246 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+29247 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+29247 [main] INFO  com.shop.main.ShopMain  - -----------------
+29247 [main] INFO  com.shop.main.ShopMain  - 1)Login
+29247 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+29247 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+29247 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+46067 [main] INFO  com.shop.main.ShopMain  - Please enter password: 
+50153 [main] INFO  com.shop.main.ShopMain  - Please enter role: 
+58238 [main] INFO  com.shop.main.ShopMain  - Welcome, Customer!
+
+
+Thank you for choosing Teresa'Orchid Store.
+We are honored to have you as 
+our new customer, and it is our pleasure to provide 
+you with quality orchids.
+
+Our orchids are guaranteed to be of excellent quality and 
+all at very affordable prices.
+We make sure you get nothing but the best from our store.
+
+Being the newest addition to the Teresa' shop family,
+we will be giving you a welcome treat. For your first batch of orders,
+you get 10% off on the total bill. 
+It is our way of letting you know that we appreciate doing business with you.
+
+If you have the time next week, maybe we can visit you in your office.
+ We want to know more about your printing needs so that we can offer you something most suited for your type of business. We will just give you a call, or you can also contact us at 4567890 during weekdays from 8:00-5:00 p.m.
+ Once again, thank you and looking forward to meeting you soon.
+
+58238 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+58238 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+58239 [main] INFO  com.shop.main.ShopMain  - -----------------
+58239 [main] INFO  com.shop.main.ShopMain  - 1)Login
+58239 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+58239 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+58239 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+80128 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+80128 [main] INFO  com.shop.main.ShopMain  - Enter email:
+89367 [main] INFO  com.shop.main.ShopMain  - Enter password:
+93928 [main] INFO  com.shop.main.ShopMain  - ------------Login result---------
+93928 [main] INFO  com.shop.main.ShopMain  - Person LOGIN Success!
+93928 [main] INFO  com.shop.main.ShopMain  - User [id=45, email=newuser@abc.com, role=customer]
+93929 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+93929 [main] INFO  com.shop.main.ShopMain  - ....3)View available items
+93929 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+93929 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+93929 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments on an item
+93929 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+93929 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+93929 [main] INFO  com.shop.main.ShopMain  - -----------------
+101086 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+101111 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+101112 [main] INFO  com.shop.main.ShopMain  - ....3)View available items
+101112 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+101112 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+101112 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments on an item
+101112 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+101112 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+101112 [main] INFO  com.shop.main.ShopMain  - -----------------
+107193 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+107194 [main] INFO  com.shop.main.ShopMain  - Please enter item_id: 
+119979 [main] INFO  com.shop.main.ShopMain  - Please enter offer_price: 
+124664 [main] INFO  com.shop.main.ShopMain  - Please enter quantity: 
+126486 [main] INFO  com.shop.main.ShopMain  - Please enter plan_weeks_count: 
+128459 [main] ERROR com.shop.main.ShopMain  - ....ERROR: Internal error: ERROR: insert or update on table "itemoffer" violates foreign key constraint "itemoffer_fk"
+  Detail: Key (item_id)=(12) is not present in table "items".
+128459 [main] INFO  com.shop.main.ShopMain  - ------------RETRY WITH VALID VALUES---------
+128459 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+128459 [main] INFO  com.shop.main.ShopMain  - ....3)View available items
+128459 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+128459 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+128459 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments on an item
+128460 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+128460 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+128460 [main] INFO  com.shop.main.ShopMain  - -----------------
+174182 [main] INFO  com.shop.main.ShopMain  - ....0)Back to Main Menu
+174183 [main] INFO  com.shop.main.ShopMain  - Invalid Choice... Please enter a proper choice.
+174183 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+174184 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+174184 [main] INFO  com.shop.main.ShopMain  - -----------------
+174184 [main] INFO  com.shop.main.ShopMain  - 1)Login
+174184 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+174184 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+174184 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+179345 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+179346 [main] INFO  com.shop.main.ShopMain  - Enter email:
+191602 [main] INFO  com.shop.main.ShopMain  - Enter password:
+194434 [main] INFO  com.shop.main.ShopMain  - ------------Login result---------
+194434 [main] INFO  com.shop.main.ShopMain  - Person LOGIN Success!
+194434 [main] INFO  com.shop.main.ShopMain  - User [id=45, email=newuser@abc.com, role=customer]
+194434 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+194434 [main] INFO  com.shop.main.ShopMain  - ....3)View available items
+194434 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+194434 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+194435 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments on an item
+194435 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+194435 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+194435 [main] INFO  com.shop.main.ShopMain  - -----------------
+200031 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+200062 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+200062 [main] INFO  com.shop.main.ShopMain  - ....3)View available items
+200063 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+200063 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+200063 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments on an item
+200063 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+200063 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+200063 [main] INFO  com.shop.main.ShopMain  - -----------------
+215100 [main] INFO  com.shop.main.ShopMain  - ....0)Back to Main Menu
+215101 [main] INFO  com.shop.main.ShopMain  - Invalid Choice... Please enter a proper choice.
+215101 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+215101 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+215101 [main] INFO  com.shop.main.ShopMain  - -----------------
+215101 [main] INFO  com.shop.main.ShopMain  - 1)Login
+215101 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+215101 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+215101 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+216883 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+216883 [main] INFO  com.shop.main.ShopMain  - Enter email:
+227506 [main] INFO  com.shop.main.ShopMain  - Enter password:
+230190 [main] INFO  com.shop.main.ShopMain  - ------------Login result---------
+230190 [main] INFO  com.shop.main.ShopMain  - Person LOGIN Success!
+230190 [main] INFO  com.shop.main.ShopMain  - User [id=45, email=newuser@abc.com, role=customer]
+230190 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+230190 [main] INFO  com.shop.main.ShopMain  - ....3)View available items
+230190 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+230190 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+230191 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments on an item
+230191 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+230191 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+230191 [main] INFO  com.shop.main.ShopMain  - -----------------
+244478 [main] INFO  com.shop.main.ShopMain  - ....0)Back to Main Menu
+244478 [main] INFO  com.shop.main.ShopMain  - Invalid Choice... Please enter a proper choice.
+244478 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+244478 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+244478 [main] INFO  com.shop.main.ShopMain  - -----------------
+244478 [main] INFO  com.shop.main.ShopMain  - 1)Login
+244478 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+244478 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+244478 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+247230 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+247231 [main] INFO  com.shop.main.ShopMain  - Enter email:
+256297 [main] INFO  com.shop.main.ShopMain  - Enter password:
+257772 [main] INFO  com.shop.main.ShopMain  - ------------Login result---------
+257772 [main] INFO  com.shop.main.ShopMain  - Person LOGIN Success!
+257772 [main] INFO  com.shop.main.ShopMain  - User [id=12, email=aaa@aaa.com, role=customer]
+257772 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+257772 [main] INFO  com.shop.main.ShopMain  - ....3)View available items
+257773 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+257773 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+257773 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments on an item
+257773 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+257773 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+257773 [main] INFO  com.shop.main.ShopMain  - -----------------
+259947 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+259974 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+259974 [main] INFO  com.shop.main.ShopMain  - ....3)View available items
+259974 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+259974 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+259974 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments on an item
+259975 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+259975 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+259975 [main] INFO  com.shop.main.ShopMain  - -----------------
+279553 [main] INFO  com.shop.main.ShopMain  - ....0)Back to Main Menu
+279553 [main] INFO  com.shop.main.ShopMain  - Invalid Choice... Please enter a proper choice.
+279554 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+279554 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+279554 [main] INFO  com.shop.main.ShopMain  - -----------------
+279554 [main] INFO  com.shop.main.ShopMain  - 1)Login
+279554 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+279554 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+279554 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+291301 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+291301 [main] INFO  com.shop.main.ShopMain  - Enter email:
+306124 [main] INFO  com.shop.main.ShopMain  - Enter password:
+308970 [main] INFO  com.shop.main.ShopMain  - ------------Login result---------
+308972 [main] INFO  com.shop.main.ShopMain  - Person LOGIN Success!
+308973 [main] INFO  com.shop.main.ShopMain  - User [id=11, email=teresa@gmail.com, role=employee]
+308973 [main] INFO  com.shop.main.ShopMain  - ------------EMPLOYEE MENU---------
+308973 [main] INFO  com.shop.main.ShopMain  - 1)Add Item
+308973 [main] INFO  com.shop.main.ShopMain  - 2)Accept or reject a pending offer
+308973 [main] INFO  com.shop.main.ShopMain  - 3)Remove an item from the shop
+308973 [main] INFO  com.shop.main.ShopMain  - 4)view all payments
+308973 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+308974 [main] INFO  com.shop.main.ShopMain  - -----------------
+312780 [main] INFO  com.shop.main.ShopMain  - Please enter itemName: 
+318938 [main] INFO  com.shop.main.ShopMain  - Please enter itemPrice: 
+322828 [main] INFO  com.shop.main.ShopMain  - Please enter itemPromotionalDiscount: 
+328801 [main] INFO  com.shop.main.ShopMain  - Please enter itemQuantity: 
+335672 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+335673 [main] INFO  com.shop.main.ShopMain  - Please enter itemQuantity: 
+346960 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate integer number.
+346960 [main] INFO  com.shop.main.ShopMain  - Please enter itemQuantity: 
+349955 [main] INFO  com.shop.main.ShopMain  - Please enter promotionStartDate MM/dd/yyyy: 
+367042 [main] INFO  com.shop.main.ShopMain  - Please enter itemPromotionEndDate MM/dd/yyyy: 
+377000 [main] INFO  com.shop.main.ShopMain  - ------------ITEM ADDED---------
+377000 [main] INFO  com.shop.main.ShopMain  - ------------EMPLOYEE MENU---------
+377000 [main] INFO  com.shop.main.ShopMain  - 1)Add Item
+377000 [main] INFO  com.shop.main.ShopMain  - 2)Accept or reject a pending offer
+377000 [main] INFO  com.shop.main.ShopMain  - 3)Remove an item from the shop
+377000 [main] INFO  com.shop.main.ShopMain  - 4)view all payments
+377000 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+377000 [main] INFO  com.shop.main.ShopMain  - -----------------
+384881 [main] INFO  com.shop.main.ShopMain  - ....0)Back to Main Menu
+384882 [main] INFO  com.shop.main.ShopMain  - Invalid Choice... Please enter a proper choice.
+384882 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+384882 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+384882 [main] INFO  com.shop.main.ShopMain  - -----------------
+384882 [main] INFO  com.shop.main.ShopMain  - 1)Login
+384882 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+384882 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+384882 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+388405 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+388405 [main] INFO  com.shop.main.ShopMain  - Enter email:
+423065 [main] INFO  com.shop.main.ShopMain  - Enter password:
+427625 [main] INFO  com.shop.main.ShopMain  - ------------Login result---------
+427625 [main] INFO  com.shop.main.ShopMain  - Person LOGIN Success!
+427625 [main] INFO  com.shop.main.ShopMain  - User [id=45, email=newuser@abc.com, role=customer]
+427625 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+427625 [main] INFO  com.shop.main.ShopMain  - ....3)View available items
+427625 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+427625 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+427626 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments on an item
+427626 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+427626 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+427626 [main] INFO  com.shop.main.ShopMain  - -----------------
+429997 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+430019 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+430019 [main] INFO  com.shop.main.ShopMain  - ....3)View available items
+430019 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+430019 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+430019 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments on an item
+430019 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+430019 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+430019 [main] INFO  com.shop.main.ShopMain  - -----------------
+451086 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+451087 [main] INFO  com.shop.main.ShopMain  - Please enter item_id: 
+458216 [main] INFO  com.shop.main.ShopMain  - Please enter offer_price: 
+461831 [main] INFO  com.shop.main.ShopMain  - Please enter quantity: 
+463747 [main] INFO  com.shop.main.ShopMain  - Please enter plan_weeks_count: 
+465824 [main] ERROR com.shop.main.ShopMain  - ....ERROR: Internal error: ERROR: insert or update on table "itemoffer" violates foreign key constraint "itemoffer_fk"
+  Detail: Key (item_id)=(12) is not present in table "items".
+465824 [main] INFO  com.shop.main.ShopMain  - ------------RETRY WITH VALID VALUES---------
+465824 [main] INFO  com.shop.main.ShopMain  - ------------CUSTOMER MENU---------
+465824 [main] INFO  com.shop.main.ShopMain  - ....3)View available items
+465824 [main] INFO  com.shop.main.ShopMain  - ....2)Make an offer for an item
+465824 [main] INFO  com.shop.main.ShopMain  - ....3)View my purchases
+465824 [main] INFO  com.shop.main.ShopMain  - ....4)Make payments on an item
+465824 [main] INFO  com.shop.main.ShopMain  - ....5)View payments for item purchase
+465824 [main] INFO  com.shop.main.ShopMain  - 0)Back to Main Menu
+465824 [main] INFO  com.shop.main.ShopMain  - -----------------
+0    [main] INFO  com.shop.main.ShopMain  - Shop Appplication Started.
+5    [main] INFO  com.shop.main.ShopMain  - Welcome to Teresa's Shop,  where every day is a happy day
+5    [main] INFO  com.shop.main.ShopMain  - ================================================
+5    [main] INFO  com.shop.main.ShopMain  - Teresa's Shop App V1.0
+5    [main] INFO  com.shop.main.ShopMain  - ================================================
+6    [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+6    [main] INFO  com.shop.main.ShopMain  - Shop MENU
+6    [main] INFO  com.shop.main.ShopMain  - -----------------
+6    [main] INFO  com.shop.main.ShopMain  - 1)Login
+6    [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+6    [main] INFO  com.shop.main.ShopMain  - 0)Exit
+6    [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
+11259 [main] INFO  com.shop.main.ShopMain  - Enter below Details to Login
+11260 [main] INFO  com.shop.main.ShopMain  - Enter email:
+20137 [main] INFO  com.shop.main.ShopMain  - Enter password:
+23424 [main] INFO  com.shop.main.ShopMain  - User LOGIN FAILED!
+23425 [main] INFO  com.shop.main.ShopMain  - 
+-----------------
+23425 [main] INFO  com.shop.main.ShopMain  - Shop MENU
+23425 [main] INFO  com.shop.main.ShopMain  - -----------------
+23426 [main] INFO  com.shop.main.ShopMain  - 1)Login
+23426 [main] INFO  com.shop.main.ShopMain  - 2)Signup for User Account
+23426 [main] INFO  com.shop.main.ShopMain  - 0)Exit
+23426 [main] INFO  com.shop.main.ShopMain  - Please enter an appropriate Search Option(1-8)
