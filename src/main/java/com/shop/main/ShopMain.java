@@ -575,7 +575,7 @@ public class ShopMain {
 			log.info("1)Add employee accounts");
 			log.info("2)View items");
 			log.info("3)Edit existing items");
-			log.info("4)Fire employees");
+			log.info("4)Fire employee an send email notification");
 			log.info("5)View sales history of all offers");
 			log.info("0)Back to Main Menu");
 			log.info("-----------------");
